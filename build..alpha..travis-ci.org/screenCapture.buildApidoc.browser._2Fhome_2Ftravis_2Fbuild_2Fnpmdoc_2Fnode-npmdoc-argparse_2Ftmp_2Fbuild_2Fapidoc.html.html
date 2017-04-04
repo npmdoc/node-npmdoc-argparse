@@ -1,0 +1,4699 @@
+<html><head></head><body><div class="apidocDiv">
+<style>
+/*csslint
+*/
+.apidocDiv {
+    background: #fff;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.apidocDiv a[href] {
+    color: #33f;
+    font-weight: bold;
+    text-decoration: none;
+}
+.apidocDiv a[href]:hover {
+    text-decoration: underline;
+}
+.apidocCodeCommentSpan {
+    background: #bbf;
+    color: #000;
+    display: block;
+}
+.apidocCodeKeywordSpan {
+    color: #d00;
+    font-weight: bold;
+}
+.apidocCodePre {
+    background: #eef;
+    border: 1px solid;
+    color: #777;
+    padding: 5px;
+    white-space: pre-wrap;
+}
+.apidocFooterDiv {
+    margin-top: 20px;
+    text-align: center;
+}
+.apidocModuleLi {
+    margin-top: 10px;
+}
+.apidocSectionDiv {
+    border-top: 1px solid;
+    margin-top: 20px;
+}
+.apidocSignatureSpan {
+    color: #777;
+    font-weight: bold;
+}
+</style>
+<h1>api documentation for
+    <a href="https://github.com/nodeca/argparse#readme">argparse (v1.0.9)</a>
+</h1>
+<h4>Very powerful CLI arguments parser. Native port of argparse - python's options parsing library</h4>
+<div class="apidocSectionDiv"><a href="#apidoc.tableOfContents" id="apidoc.tableOfContents"><h1>table of contents</h1></a><ol>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.argparse">module argparse</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.argparse.Action">
+            function <span class="apidocSignatureSpan">argparse.</span>Action
+            <span class="apidocSignatureSpan">(options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.argparse.ArgumentDefaultsHelpFormatter">
+            function <span class="apidocSignatureSpan">argparse.</span>ArgumentDefaultsHelpFormatter
+            <span class="apidocSignatureSpan">(options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.argparse.ArgumentParser">
+            function <span class="apidocSignatureSpan">argparse.</span>ArgumentParser
+            <span class="apidocSignatureSpan">(options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.argparse.ArgumentParser.super_">
+            function <span class="apidocSignatureSpan">argparse.</span>ArgumentParser.super_
+            <span class="apidocSignatureSpan">(options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.argparse.HelpFormatter">
+            function <span class="apidocSignatureSpan">argparse.</span>HelpFormatter
+            <span class="apidocSignatureSpan">(options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.argparse.Namespace">
+            function <span class="apidocSignatureSpan">argparse.</span>Namespace
+            <span class="apidocSignatureSpan">(options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.argparse.RawDescriptionHelpFormatter">
+            function <span class="apidocSignatureSpan">argparse.</span>RawDescriptionHelpFormatter
+            <span class="apidocSignatureSpan">(options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.argparse.RawTextHelpFormatter">
+            function <span class="apidocSignatureSpan">argparse.</span>RawTextHelpFormatter
+            <span class="apidocSignatureSpan">(options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">argparse.</span>Action.prototype</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">argparse.</span>ArgumentDefaultsHelpFormatter.prototype</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">argparse.</span>ArgumentParser.prototype</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">argparse.</span>ArgumentParser.super_.prototype</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">argparse.</span>Const</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">argparse.</span>HelpFormatter.prototype</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">argparse.</span>Namespace.prototype</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">argparse.</span>RawDescriptionHelpFormatter.prototype</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">argparse.</span>RawTextHelpFormatter.prototype</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">argparse.</span>utils</span>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.argparse.Action">module argparse.Action</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.argparse.Action.Action">
+            function <span class="apidocSignatureSpan">argparse.</span>Action
+            <span class="apidocSignatureSpan">(options)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.argparse.Action.prototype">module argparse.Action.prototype</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.argparse.Action.prototype.call">
+            function <span class="apidocSignatureSpan">argparse.Action.prototype.</span>call
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.argparse.Action.prototype.getName">
+            function <span class="apidocSignatureSpan">argparse.Action.prototype.</span>getName
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.argparse.Action.prototype.isOptional">
+            function <span class="apidocSignatureSpan">argparse.Action.prototype.</span>isOptional
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.argparse.Action.prototype.isPositional">
+            function <span class="apidocSignatureSpan">argparse.Action.prototype.</span>isPositional
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.argparse.ArgumentDefaultsHelpFormatter">module argparse.ArgumentDefaultsHelpFormatter</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.argparse.ArgumentDefaultsHelpFormatter.ArgumentDefaultsHelpFormatter">
+            function <span class="apidocSignatureSpan">argparse.</span>ArgumentDefaultsHelpFormatter
+            <span class="apidocSignatureSpan">(options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.argparse.ArgumentDefaultsHelpFormatter.super_">
+            function <span class="apidocSignatureSpan">argparse.ArgumentDefaultsHelpFormatter.</span>super_
+            <span class="apidocSignatureSpan">(options)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.argparse.ArgumentDefaultsHelpFormatter.prototype">module argparse.ArgumentDefaultsHelpFormatter.prototype</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.argparse.ArgumentDefaultsHelpFormatter.prototype._getHelpString">
+            function <span class="apidocSignatureSpan">argparse.ArgumentDefaultsHelpFormatter.prototype.</span>_getHelpString
+            <span class="apidocSignatureSpan">(action)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.argparse.ArgumentParser">module argparse.ArgumentParser</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.argparse.ArgumentParser.ArgumentParser">
+            function <span class="apidocSignatureSpan">argparse.</span>ArgumentParser
+            <span class="apidocSignatureSpan">(options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.argparse.ArgumentParser.super_">
+            function <span class="apidocSignatureSpan">argparse.ArgumentParser.</span>super_
+            <span class="apidocSignatureSpan">(options)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.argparse.ArgumentParser.prototype">module argparse.ArgumentParser.prototype</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.argparse.ArgumentParser.prototype._addAction">
+            function <span class="apidocSignatureSpan">argparse.ArgumentParser.prototype.</span>_addAction
+            <span class="apidocSignatureSpan">(action)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.argparse.ArgumentParser.prototype._checkValue">
+            function <span class="apidocSignatureSpan">argparse.ArgumentParser.prototype.</span>_checkValue
+            <span class="apidocSignatureSpan">(action, value)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.argparse.ArgumentParser.prototype._getFormatter">
+            function <span class="apidocSignatureSpan">argparse.ArgumentParser.prototype.</span>_getFormatter
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.argparse.ArgumentParser.prototype._getNargsPattern">
+            function <span class="apidocSignatureSpan">argparse.ArgumentParser.prototype.</span>_getNargsPattern
+            <span class="apidocSignatureSpan">(action)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.argparse.ArgumentParser.prototype._getOptionTuples">
+            function <span class="apidocSignatureSpan">argparse.ArgumentParser.prototype.</span>_getOptionTuples
+            <span class="apidocSignatureSpan">(optionString)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.argparse.ArgumentParser.prototype._getOptionalActions">
+            function <span class="apidocSignatureSpan">argparse.ArgumentParser.prototype.</span>_getOptionalActions
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.argparse.ArgumentParser.prototype._getPositionalActions">
+            function <span class="apidocSignatureSpan">argparse.ArgumentParser.prototype.</span>_getPositionalActions
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.argparse.ArgumentParser.prototype._getValue">
+            function <span class="apidocSignatureSpan">argparse.ArgumentParser.prototype.</span>_getValue
+            <span class="apidocSignatureSpan">(action, argString)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.argparse.ArgumentParser.prototype._getValues">
+            function <span class="apidocSignatureSpan">argparse.ArgumentParser.prototype.</span>_getValues
+            <span class="apidocSignatureSpan">(action, argStrings)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.argparse.ArgumentParser.prototype._matchArgument">
+            function <span class="apidocSignatureSpan">argparse.ArgumentParser.prototype.</span>_matchArgument
+            <span class="apidocSignatureSpan">(action, regexpArgStrings)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.argparse.ArgumentParser.prototype._matchArgumentsPartial">
+            function <span class="apidocSignatureSpan">argparse.ArgumentParser.prototype.</span>_matchArgumentsPartial
+            <span class="apidocSignatureSpan">(actions, regexpArgStrings)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.argparse.ArgumentParser.prototype._parseKnownArgs">
+            function <span class="apidocSignatureSpan">argparse.ArgumentParser.prototype.</span>_parseKnownArgs
+            <span class="apidocSignatureSpan">(argStrings, namespace)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.argparse.ArgumentParser.prototype._parseOptional">
+            function <span class="apidocSignatureSpan">argparse.ArgumentParser.prototype.</span>_parseOptional
+            <span class="apidocSignatureSpan">(argString)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.argparse.ArgumentParser.prototype._printMessage">
+            function <span class="apidocSignatureSpan">argparse.ArgumentParser.prototype.</span>_printMessage
+            <span class="apidocSignatureSpan">(message, stream)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.argparse.ArgumentParser.prototype._readArgsFromFiles">
+            function <span class="apidocSignatureSpan">argparse.ArgumentParser.prototype.</span>_readArgsFromFiles
+            <span class="apidocSignatureSpan">(argStrings)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.argparse.ArgumentParser.prototype.addSubparsers">
+            function <span class="apidocSignatureSpan">argparse.ArgumentParser.prototype.</span>addSubparsers
+            <span class="apidocSignatureSpan">(options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.argparse.ArgumentParser.prototype.convertArgLineToArgs">
+            function <span class="apidocSignatureSpan">argparse.ArgumentParser.prototype.</span>convertArgLineToArgs
+            <span class="apidocSignatureSpan">(argLine)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.argparse.ArgumentParser.prototype.error">
+            function <span class="apidocSignatureSpan">argparse.ArgumentParser.prototype.</span>error
+            <span class="apidocSignatureSpan">(err)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.argparse.ArgumentParser.prototype.exit">
+            function <span class="apidocSignatureSpan">argparse.ArgumentParser.prototype.</span>exit
+            <span class="apidocSignatureSpan">(status, message)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.argparse.ArgumentParser.prototype.formatHelp">
+            function <span class="apidocSignatureSpan">argparse.ArgumentParser.prototype.</span>formatHelp
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.argparse.ArgumentParser.prototype.formatUsage">
+            function <span class="apidocSignatureSpan">argparse.ArgumentParser.prototype.</span>formatUsage
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.argparse.ArgumentParser.prototype.parseArgs">
+            function <span class="apidocSignatureSpan">argparse.ArgumentParser.prototype.</span>parseArgs
+            <span class="apidocSignatureSpan">(args, namespace)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.argparse.ArgumentParser.prototype.parseKnownArgs">
+            function <span class="apidocSignatureSpan">argparse.ArgumentParser.prototype.</span>parseKnownArgs
+            <span class="apidocSignatureSpan">(args, namespace)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.argparse.ArgumentParser.prototype.printHelp">
+            function <span class="apidocSignatureSpan">argparse.ArgumentParser.prototype.</span>printHelp
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.argparse.ArgumentParser.prototype.printUsage">
+            function <span class="apidocSignatureSpan">argparse.ArgumentParser.prototype.</span>printUsage
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.argparse.ArgumentParser.super_">module argparse.ArgumentParser.super_</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.argparse.ArgumentParser.super_.super_">
+            function <span class="apidocSignatureSpan">argparse.ArgumentParser.</span>super_
+            <span class="apidocSignatureSpan">(options)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.argparse.ArgumentParser.super_.prototype">module argparse.ArgumentParser.super_.prototype</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.argparse.ArgumentParser.super_.prototype._addAction">
+            function <span class="apidocSignatureSpan">argparse.ArgumentParser.super_.prototype.</span>_addAction
+            <span class="apidocSignatureSpan">(action)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.argparse.ArgumentParser.super_.prototype._addContainerActions">
+            function <span class="apidocSignatureSpan">argparse.ArgumentParser.super_.prototype.</span>_addContainerActions
+            <span class="apidocSignatureSpan">(container)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.argparse.ArgumentParser.super_.prototype._checkConflict">
+            function <span class="apidocSignatureSpan">argparse.ArgumentParser.super_.prototype.</span>_checkConflict
+            <span class="apidocSignatureSpan">(action)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.argparse.ArgumentParser.super_.prototype._getHandler">
+            function <span class="apidocSignatureSpan">argparse.ArgumentParser.super_.prototype.</span>_getHandler
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.argparse.ArgumentParser.super_.prototype._getOptional">
+            function <span class="apidocSignatureSpan">argparse.ArgumentParser.super_.prototype.</span>_getOptional
+            <span class="apidocSignatureSpan">(args, options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.argparse.ArgumentParser.super_.prototype._getPositional">
+            function <span class="apidocSignatureSpan">argparse.ArgumentParser.super_.prototype.</span>_getPositional
+            <span class="apidocSignatureSpan">(dest, options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.argparse.ArgumentParser.super_.prototype._handleConflictError">
+            function <span class="apidocSignatureSpan">argparse.ArgumentParser.super_.prototype.</span>_handleConflictError
+            <span class="apidocSignatureSpan">(action, conflOptionals)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.argparse.ArgumentParser.super_.prototype._handleConflictResolve">
+            function <span class="apidocSignatureSpan">argparse.ArgumentParser.super_.prototype.</span>_handleConflictResolve
+            <span class="apidocSignatureSpan">(action, conflOptionals)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.argparse.ArgumentParser.super_.prototype._popActionClass">
+            function <span class="apidocSignatureSpan">argparse.ArgumentParser.super_.prototype.</span>_popActionClass
+            <span class="apidocSignatureSpan">(options, defaultValue)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.argparse.ArgumentParser.super_.prototype._registryGet">
+            function <span class="apidocSignatureSpan">argparse.ArgumentParser.super_.prototype.</span>_registryGet
+            <span class="apidocSignatureSpan">(registryName, value, defaultValue)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.argparse.ArgumentParser.super_.prototype._removeAction">
+            function <span class="apidocSignatureSpan">argparse.ArgumentParser.super_.prototype.</span>_removeAction
+            <span class="apidocSignatureSpan">(action)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.argparse.ArgumentParser.super_.prototype.addArgument">
+            function <span class="apidocSignatureSpan">argparse.ArgumentParser.super_.prototype.</span>addArgument
+            <span class="apidocSignatureSpan">(args, options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.argparse.ArgumentParser.super_.prototype.addArgumentGroup">
+            function <span class="apidocSignatureSpan">argparse.ArgumentParser.super_.prototype.</span>addArgumentGroup
+            <span class="apidocSignatureSpan">(options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.argparse.ArgumentParser.super_.prototype.addMutuallyExclusiveGroup">
+            function <span class="apidocSignatureSpan">argparse.ArgumentParser.super_.prototype.</span>addMutuallyExclusiveGroup
+            <span class="apidocSignatureSpan">(options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.argparse.ArgumentParser.super_.prototype.getDefault">
+            function <span class="apidocSignatureSpan">argparse.ArgumentParser.super_.prototype.</span>getDefault
+            <span class="apidocSignatureSpan">(dest)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.argparse.ArgumentParser.super_.prototype.register">
+            function <span class="apidocSignatureSpan">argparse.ArgumentParser.super_.prototype.</span>register
+            <span class="apidocSignatureSpan">(registryName, value, object)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.argparse.ArgumentParser.super_.prototype.setDefaults">
+            function <span class="apidocSignatureSpan">argparse.ArgumentParser.super_.prototype.</span>setDefaults
+            <span class="apidocSignatureSpan">(options)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.argparse.HelpFormatter">module argparse.HelpFormatter</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.argparse.HelpFormatter.HelpFormatter">
+            function <span class="apidocSignatureSpan">argparse.</span>HelpFormatter
+            <span class="apidocSignatureSpan">(options)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.argparse.HelpFormatter.prototype">module argparse.HelpFormatter.prototype</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.argparse.HelpFormatter.prototype._addItem">
+            function <span class="apidocSignatureSpan">argparse.HelpFormatter.prototype.</span>_addItem
+            <span class="apidocSignatureSpan">(func, args)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.argparse.HelpFormatter.prototype._dedent">
+            function <span class="apidocSignatureSpan">argparse.HelpFormatter.prototype.</span>_dedent
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.argparse.HelpFormatter.prototype._expandHelp">
+            function <span class="apidocSignatureSpan">argparse.HelpFormatter.prototype.</span>_expandHelp
+            <span class="apidocSignatureSpan">(action)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.argparse.HelpFormatter.prototype._fillText">
+            function <span class="apidocSignatureSpan">argparse.HelpFormatter.prototype.</span>_fillText
+            <span class="apidocSignatureSpan">(text, width, indent)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.argparse.HelpFormatter.prototype._formatAction">
+            function <span class="apidocSignatureSpan">argparse.HelpFormatter.prototype.</span>_formatAction
+            <span class="apidocSignatureSpan">(action)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.argparse.HelpFormatter.prototype._formatActionInvocation">
+            function <span class="apidocSignatureSpan">argparse.HelpFormatter.prototype.</span>_formatActionInvocation
+            <span class="apidocSignatureSpan">(action)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.argparse.HelpFormatter.prototype._formatActionsUsage">
+            function <span class="apidocSignatureSpan">argparse.HelpFormatter.prototype.</span>_formatActionsUsage
+            <span class="apidocSignatureSpan">(actions, groups)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.argparse.HelpFormatter.prototype._formatArgs">
+            function <span class="apidocSignatureSpan">argparse.HelpFormatter.prototype.</span>_formatArgs
+            <span class="apidocSignatureSpan">(action, metavarDefault)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.argparse.HelpFormatter.prototype._formatText">
+            function <span class="apidocSignatureSpan">argparse.HelpFormatter.prototype.</span>_formatText
+            <span class="apidocSignatureSpan">(text)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.argparse.HelpFormatter.prototype._formatUsage">
+            function <span class="apidocSignatureSpan">argparse.HelpFormatter.prototype.</span>_formatUsage
+            <span class="apidocSignatureSpan">(usage, actions, groups, prefix)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.argparse.HelpFormatter.prototype._getHelpString">
+            function <span class="apidocSignatureSpan">argparse.HelpFormatter.prototype.</span>_getHelpString
+            <span class="apidocSignatureSpan">(action)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.argparse.HelpFormatter.prototype._indent">
+            function <span class="apidocSignatureSpan">argparse.HelpFormatter.prototype.</span>_indent
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.argparse.HelpFormatter.prototype._joinParts">
+            function <span class="apidocSignatureSpan">argparse.HelpFormatter.prototype.</span>_joinParts
+            <span class="apidocSignatureSpan">(partStrings)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.argparse.HelpFormatter.prototype._metavarFormatter">
+            function <span class="apidocSignatureSpan">argparse.HelpFormatter.prototype.</span>_metavarFormatter
+            <span class="apidocSignatureSpan">(action, metavarDefault)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.argparse.HelpFormatter.prototype._splitLines">
+            function <span class="apidocSignatureSpan">argparse.HelpFormatter.prototype.</span>_splitLines
+            <span class="apidocSignatureSpan">(text, width)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.argparse.HelpFormatter.prototype.addArgument">
+            function <span class="apidocSignatureSpan">argparse.HelpFormatter.prototype.</span>addArgument
+            <span class="apidocSignatureSpan">(action)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.argparse.HelpFormatter.prototype.addArguments">
+            function <span class="apidocSignatureSpan">argparse.HelpFormatter.prototype.</span>addArguments
+            <span class="apidocSignatureSpan">(actions)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.argparse.HelpFormatter.prototype.addText">
+            function <span class="apidocSignatureSpan">argparse.HelpFormatter.prototype.</span>addText
+            <span class="apidocSignatureSpan">(text)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.argparse.HelpFormatter.prototype.addUsage">
+            function <span class="apidocSignatureSpan">argparse.HelpFormatter.prototype.</span>addUsage
+            <span class="apidocSignatureSpan">(usage, actions, groups, prefix)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.argparse.HelpFormatter.prototype.endSection">
+            function <span class="apidocSignatureSpan">argparse.HelpFormatter.prototype.</span>endSection
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.argparse.HelpFormatter.prototype.formatHelp">
+            function <span class="apidocSignatureSpan">argparse.HelpFormatter.prototype.</span>formatHelp
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.argparse.HelpFormatter.prototype.startSection">
+            function <span class="apidocSignatureSpan">argparse.HelpFormatter.prototype.</span>startSection
+            <span class="apidocSignatureSpan">(heading)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.argparse.Namespace">module argparse.Namespace</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.argparse.Namespace.Namespace">
+            function <span class="apidocSignatureSpan">argparse.</span>Namespace
+            <span class="apidocSignatureSpan">(options)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.argparse.Namespace.prototype">module argparse.Namespace.prototype</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.argparse.Namespace.prototype.get">
+            function <span class="apidocSignatureSpan">argparse.Namespace.prototype.</span>get
+            <span class="apidocSignatureSpan">(key, defaultValue)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.argparse.Namespace.prototype.isset">
+            function <span class="apidocSignatureSpan">argparse.Namespace.prototype.</span>isset
+            <span class="apidocSignatureSpan">(key)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.argparse.Namespace.prototype.set">
+            function <span class="apidocSignatureSpan">argparse.Namespace.prototype.</span>set
+            <span class="apidocSignatureSpan">(key, value)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.argparse.Namespace.prototype.unset">
+            function <span class="apidocSignatureSpan">argparse.Namespace.prototype.</span>unset
+            <span class="apidocSignatureSpan">(key, defaultValue)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.argparse.RawDescriptionHelpFormatter">module argparse.RawDescriptionHelpFormatter</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.argparse.RawDescriptionHelpFormatter.RawDescriptionHelpFormatter">
+            function <span class="apidocSignatureSpan">argparse.</span>RawDescriptionHelpFormatter
+            <span class="apidocSignatureSpan">(options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.argparse.RawDescriptionHelpFormatter.super_">
+            function <span class="apidocSignatureSpan">argparse.RawDescriptionHelpFormatter.</span>super_
+            <span class="apidocSignatureSpan">(options)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.argparse.RawDescriptionHelpFormatter.prototype">module argparse.RawDescriptionHelpFormatter.prototype</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.argparse.RawDescriptionHelpFormatter.prototype._fillText">
+            function <span class="apidocSignatureSpan">argparse.RawDescriptionHelpFormatter.prototype.</span>_fillText
+            <span class="apidocSignatureSpan">(text, width, indent)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.argparse.RawTextHelpFormatter">module argparse.RawTextHelpFormatter</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.argparse.RawTextHelpFormatter.RawTextHelpFormatter">
+            function <span class="apidocSignatureSpan">argparse.</span>RawTextHelpFormatter
+            <span class="apidocSignatureSpan">(options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.argparse.RawTextHelpFormatter.super_">
+            function <span class="apidocSignatureSpan">argparse.RawTextHelpFormatter.</span>super_
+            <span class="apidocSignatureSpan">(options)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.argparse.RawTextHelpFormatter.prototype">module argparse.RawTextHelpFormatter.prototype</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.argparse.RawTextHelpFormatter.prototype._splitLines">
+            function <span class="apidocSignatureSpan">argparse.RawTextHelpFormatter.prototype.</span>_splitLines
+            <span class="apidocSignatureSpan">(text)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.argparse.utils">module argparse.utils</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.argparse.utils.arrayEqual">
+            function <span class="apidocSignatureSpan">argparse.utils.</span>arrayEqual
+            <span class="apidocSignatureSpan">(a, b)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.argparse.utils.arrayUnion">
+            function <span class="apidocSignatureSpan">argparse.utils.</span>arrayUnion
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.argparse.utils.capitalize">
+            function <span class="apidocSignatureSpan">argparse.utils.</span>capitalize
+            <span class="apidocSignatureSpan">(str)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.argparse.utils.extend">
+            function <span class="apidocSignatureSpan">argparse.utils.</span>extend
+            <span class="apidocSignatureSpan">(dest, src)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.argparse.utils.has">
+            function <span class="apidocSignatureSpan">argparse.utils.</span>has
+            <span class="apidocSignatureSpan">(obj, key)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.argparse.utils.repeat">
+            function <span class="apidocSignatureSpan">argparse.utils.</span>repeat
+            <span class="apidocSignatureSpan">(str, num)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.argparse.utils.trimChars">
+            function <span class="apidocSignatureSpan">argparse.utils.</span>trimChars
+            <span class="apidocSignatureSpan">(str, chars)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.argparse.utils.trimEnd">
+            function <span class="apidocSignatureSpan">argparse.utils.</span>trimEnd
+            <span class="apidocSignatureSpan">(str)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+</ol></div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.argparse" id="apidoc.module.argparse">module argparse</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.argparse.Action" id="apidoc.element.argparse.Action">
+        function <span class="apidocSignatureSpan">argparse.</span>Action
+        <span class="apidocSignatureSpan">(options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function Action(options) {
+  options = options || {};
+  this.optionStrings = options.optionStrings || [];
+  this.dest = options.dest;
+  this.nargs = typeof options.nargs !== 'undefined' ? options.nargs : null;
+  this.constant = typeof options.constant !== 'undefined' ? options.constant : null;
+  this.defaultValue = options.defaultValue;
+  this.type = typeof options.type !== 'undefined' ? options.type : null;
+  this.choices = typeof options.choices !== 'undefined' ? options.choices : null;
+  this.required = typeof options.required !== 'undefined' ? options.required : false;
+  this.help = typeof options.help !== 'undefined' ? options.help : null;
+  this.metavar = typeof options.metavar !== 'undefined' ? options.metavar : null;
+
+  if (!(this.optionStrings instanceof Array)) {
+    throw new Error('optionStrings should be an array');
+  }
+  if (typeof this.required !== 'undefined' &amp;&amp; typeof this.required !== 'boolean') {
+    throw new Error('required should be a boolean');
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.argparse.ArgumentDefaultsHelpFormatter" id="apidoc.element.argparse.ArgumentDefaultsHelpFormatter">
+        function <span class="apidocSignatureSpan">argparse.</span>ArgumentDefaultsHelpFormatter
+        <span class="apidocSignatureSpan">(options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function ArgumentDefaultsHelpFormatter(options) {
+  HelpFormatter.call(this, options);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.argparse.ArgumentParser" id="apidoc.element.argparse.ArgumentParser">
+        function <span class="apidocSignatureSpan">argparse.</span>ArgumentParser
+        <span class="apidocSignatureSpan">(options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function ArgumentParser(options) {
+  if (!(this instanceof ArgumentParser)) {
+    return new ArgumentParser(options);
+  }
+  var self = this;
+  options = options || {};
+
+  options.description = (options.description || null);
+  options.argumentDefault = (options.argumentDefault || null);
+  options.prefixChars = (options.prefixChars || '-');
+  options.conflictHandler = (options.conflictHandler || 'error');
+  ActionContainer.call(this, options);
+
+  options.addHelp = typeof options.addHelp === 'undefined' || !!options.addHelp;
+  options.parents = options.parents || [];
+  // default program name
+  options.prog = (options.prog || Path.basename(process.argv[1]));
+  this.prog = options.prog;
+  this.usage = options.usage;
+  this.epilog = options.epilog;
+  this.version = options.version;
+
+  this.debug = (options.debug === true);
+
+  this.formatterClass = (options.formatterClass || HelpFormatter);
+  this.fromfilePrefixChars = options.fromfilePrefixChars || null;
+  this._positionals = this.addArgumentGroup({ title: 'Positional arguments' });
+  this._optionals = this.addArgumentGroup({ title: 'Optional arguments' });
+  this._subparsers = null;
+
+  // register types
+  function FUNCTION_IDENTITY(o) {
+    return o;
+  }
+  this.register('type', 'auto', FUNCTION_IDENTITY);
+  this.register('type', null, FUNCTION_IDENTITY);
+  this.register('type', 'int', function (x) {
+    var result = parseInt(x, 10);
+    if (isNaN(result)) {
+      throw new Error(x + ' is not a valid integer.');
+    }
+    return result;
+  });
+  this.register('type', 'float', function (x) {
+    var result = parseFloat(x);
+    if (isNaN(result)) {
+      throw new Error(x + ' is not a valid float.');
+    }
+    return result;
+  });
+  this.register('type', 'string', function (x) {
+    return '' + x;
+  });
+
+  // add help and version arguments if necessary
+  var defaultPrefix = (this.prefixChars.indexOf('-') &gt; -1) ? '-' : this.prefixChars[0];
+  if (options.addHelp) {
+    this.addArgument(
+      [ defaultPrefix + 'h', defaultPrefix + defaultPrefix + 'help' ],
+      {
+        action: 'help',
+        defaultValue: c.SUPPRESS,
+        help: 'Show this help message and exit.'
+      }
+    );
+  }
+  if (typeof this.version !== 'undefined') {
+    this.addArgument(
+      [ defaultPrefix + 'v', defaultPrefix + defaultPrefix + 'version' ],
+      {
+        action: 'version',
+        version: this.version,
+        defaultValue: c.SUPPRESS,
+        help: "Show program's version number and exit."
+      }
+    );
+  }
+
+  // add parent arguments and defaults
+  options.parents.forEach(function (parent) {
+    self._addContainerActions(parent);
+    if (typeof parent._defaults !== 'undefined') {
+      for (var defaultKey in parent._defaults) {
+        if (parent._defaults.hasOwnProperty(defaultKey)) {
+          self._defaults[defaultKey] = parent._defaults[defaultKey];
+        }
+      }
+    }
+  });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.argparse.ArgumentParser.super_" id="apidoc.element.argparse.ArgumentParser.super_">
+        function <span class="apidocSignatureSpan">argparse.</span>ArgumentParser.super_
+        <span class="apidocSignatureSpan">(options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function ActionContainer(options) {
+  options = options || {};
+
+  this.description = options.description;
+  this.argumentDefault = options.argumentDefault;
+  this.prefixChars = options.prefixChars || '';
+  this.conflictHandler = options.conflictHandler;
+
+  // set up registries
+  this._registries = {};
+
+  // register actions
+  this.register('action', null, ActionStore);
+  this.register('action', 'store', ActionStore);
+  this.register('action', 'storeConst', ActionStoreConstant);
+  this.register('action', 'storeTrue', ActionStoreTrue);
+  this.register('action', 'storeFalse', ActionStoreFalse);
+  this.register('action', 'append', ActionAppend);
+  this.register('action', 'appendConst', ActionAppendConstant);
+  this.register('action', 'count', ActionCount);
+  this.register('action', 'help', ActionHelp);
+  this.register('action', 'version', ActionVersion);
+  this.register('action', 'parsers', ActionSubparsers);
+
+  // raise an exception if the conflict handler is invalid
+  this._getHandler();
+
+  // action storage
+  this._actions = [];
+  this._optionStringActions = {};
+
+  // groups
+  this._actionGroups = [];
+  this._mutuallyExclusiveGroups = [];
+
+  // defaults storage
+  this._defaults = {};
+
+  // determines whether an "option" looks like a negative number
+  // -1, -1.5 -5e+4
+  this._regexpNegativeNumber = new RegExp('^[-]?[0-9]*\\.?[0-9]+([eE][-+]?[0-9]+)?$');
+
+  // whether or not there are any optionals that look like negative
+  // numbers -- uses a list so it can be shared and edited
+  this._hasNegativeNumberOptionals = [];
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.argparse.HelpFormatter" id="apidoc.element.argparse.HelpFormatter">
+        function <span class="apidocSignatureSpan">argparse.</span>HelpFormatter
+        <span class="apidocSignatureSpan">(options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function HelpFormatter(options) {
+  options = options || {};
+
+  this._prog = options.prog;
+
+  this._maxHelpPosition = options.maxHelpPosition || 24;
+  this._width = (options.width || ((process.env.COLUMNS || 80) - 2));
+
+  this._currentIndent = 0;
+  this._indentIncriment = options.indentIncriment || 2;
+  this._level = 0;
+  this._actionMaxLength = 0;
+
+  this._rootSection = new Section(null);
+  this._currentSection = this._rootSection;
+
+  this._whitespaceMatcher = new RegExp('\\s+', 'g');
+  this._longBreakMatcher = new RegExp(c.EOL + c.EOL + c.EOL + '+', 'g');
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.argparse.Namespace" id="apidoc.element.argparse.Namespace">
+        function <span class="apidocSignatureSpan">argparse.</span>Namespace
+        <span class="apidocSignatureSpan">(options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function Namespace(options) {
+  $$.extend(this, options);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.argparse.RawDescriptionHelpFormatter" id="apidoc.element.argparse.RawDescriptionHelpFormatter">
+        function <span class="apidocSignatureSpan">argparse.</span>RawDescriptionHelpFormatter
+        <span class="apidocSignatureSpan">(options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function RawDescriptionHelpFormatter(options) {
+  HelpFormatter.call(this, options);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.argparse.RawTextHelpFormatter" id="apidoc.element.argparse.RawTextHelpFormatter">
+        function <span class="apidocSignatureSpan">argparse.</span>RawTextHelpFormatter
+        <span class="apidocSignatureSpan">(options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function RawTextHelpFormatter(options) {
+  RawDescriptionHelpFormatter.call(this, options);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.argparse.Action" id="apidoc.module.argparse.Action">module argparse.Action</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.argparse.Action.Action" id="apidoc.element.argparse.Action.Action">
+        function <span class="apidocSignatureSpan">argparse.</span>Action
+        <span class="apidocSignatureSpan">(options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function Action(options) {
+  options = options || {};
+  this.optionStrings = options.optionStrings || [];
+  this.dest = options.dest;
+  this.nargs = typeof options.nargs !== 'undefined' ? options.nargs : null;
+  this.constant = typeof options.constant !== 'undefined' ? options.constant : null;
+  this.defaultValue = options.defaultValue;
+  this.type = typeof options.type !== 'undefined' ? options.type : null;
+  this.choices = typeof options.choices !== 'undefined' ? options.choices : null;
+  this.required = typeof options.required !== 'undefined' ? options.required : false;
+  this.help = typeof options.help !== 'undefined' ? options.help : null;
+  this.metavar = typeof options.metavar !== 'undefined' ? options.metavar : null;
+
+  if (!(this.optionStrings instanceof Array)) {
+    throw new Error('optionStrings should be an array');
+  }
+  if (typeof this.required !== 'undefined' &amp;&amp; typeof this.required !== 'boolean') {
+    throw new Error('required should be a boolean');
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.argparse.Action.prototype" id="apidoc.module.argparse.Action.prototype">module argparse.Action.prototype</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.argparse.Action.prototype.call" id="apidoc.element.argparse.Action.prototype.call">
+        function <span class="apidocSignatureSpan">argparse.Action.prototype.</span>call
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">call = function () {
+  throw new Error('.call() not defined');// Not Implemented error
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+    }
+  }
+}
+return result;
+};
+
+function has(obj, key) {
+return Object.prototype.hasOwnProperty.<span class="apidocCodeKeywordSpan">call</span>(obj, key);
+}
+
+exports.has = has;
+
+exports.extend = function (dest, src) {
+for (var i in src) {
+  if (has(src, i)) { dest[i] = src[i]; }
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.argparse.Action.prototype.getName" id="apidoc.element.argparse.Action.prototype.getName">
+        function <span class="apidocSignatureSpan">argparse.Action.prototype.</span>getName
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">getName = function () {
+  if (this.optionStrings.length &gt; 0) {
+    return this.optionStrings.join('/');
+  } else if (this.metavar !== null &amp;&amp; this.metavar !== c.SUPPRESS) {
+    return this.metavar;
+  } else if (typeof this.dest !== 'undefined' &amp;&amp; this.dest !== c.SUPPRESS) {
+    return this.dest;
+  }
+  return null;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.argparse.Action.prototype.isOptional" id="apidoc.element.argparse.Action.prototype.isOptional">
+        function <span class="apidocSignatureSpan">argparse.Action.prototype.</span>isOptional
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">isOptional = function () {
+  return !this.isPositional();
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.argparse.Action.prototype.isPositional" id="apidoc.element.argparse.Action.prototype.isPositional">
+        function <span class="apidocSignatureSpan">argparse.Action.prototype.</span>isPositional
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">isPositional = function () {
+  return (this.optionStrings.length === 0);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.argparse.ArgumentDefaultsHelpFormatter" id="apidoc.module.argparse.ArgumentDefaultsHelpFormatter">module argparse.ArgumentDefaultsHelpFormatter</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.argparse.ArgumentDefaultsHelpFormatter.ArgumentDefaultsHelpFormatter" id="apidoc.element.argparse.ArgumentDefaultsHelpFormatter.ArgumentDefaultsHelpFormatter">
+        function <span class="apidocSignatureSpan">argparse.</span>ArgumentDefaultsHelpFormatter
+        <span class="apidocSignatureSpan">(options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function ArgumentDefaultsHelpFormatter(options) {
+  HelpFormatter.call(this, options);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.argparse.ArgumentDefaultsHelpFormatter.super_" id="apidoc.element.argparse.ArgumentDefaultsHelpFormatter.super_">
+        function <span class="apidocSignatureSpan">argparse.ArgumentDefaultsHelpFormatter.</span>super_
+        <span class="apidocSignatureSpan">(options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function HelpFormatter(options) {
+  options = options || {};
+
+  this._prog = options.prog;
+
+  this._maxHelpPosition = options.maxHelpPosition || 24;
+  this._width = (options.width || ((process.env.COLUMNS || 80) - 2));
+
+  this._currentIndent = 0;
+  this._indentIncriment = options.indentIncriment || 2;
+  this._level = 0;
+  this._actionMaxLength = 0;
+
+  this._rootSection = new Section(null);
+  this._currentSection = this._rootSection;
+
+  this._whitespaceMatcher = new RegExp('\\s+', 'g');
+  this._longBreakMatcher = new RegExp(c.EOL + c.EOL + c.EOL + '+', 'g');
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.argparse.ArgumentDefaultsHelpFormatter.prototype" id="apidoc.module.argparse.ArgumentDefaultsHelpFormatter.prototype">module argparse.ArgumentDefaultsHelpFormatter.prototype</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.argparse.ArgumentDefaultsHelpFormatter.prototype._getHelpString" id="apidoc.element.argparse.ArgumentDefaultsHelpFormatter.prototype._getHelpString">
+        function <span class="apidocSignatureSpan">argparse.ArgumentDefaultsHelpFormatter.prototype.</span>_getHelpString
+        <span class="apidocSignatureSpan">(action)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">_getHelpString = function (action) {
+  var help = action.help;
+  if (action.help.indexOf('%(defaultValue)s') === -1) {
+    if (action.defaultValue !== c.SUPPRESS) {
+      var defaulting_nargs = [ c.OPTIONAL, c.ZERO_OR_MORE ];
+      if (action.isOptional() || (defaulting_nargs.indexOf(action.nargs) &gt;= 0)) {
+        help += ' (default: %(defaultValue)s)';
+      }
+    }
+  }
+  return help;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.argparse.ArgumentParser" id="apidoc.module.argparse.ArgumentParser">module argparse.ArgumentParser</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.argparse.ArgumentParser.ArgumentParser" id="apidoc.element.argparse.ArgumentParser.ArgumentParser">
+        function <span class="apidocSignatureSpan">argparse.</span>ArgumentParser
+        <span class="apidocSignatureSpan">(options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function ArgumentParser(options) {
+  if (!(this instanceof ArgumentParser)) {
+    return new ArgumentParser(options);
+  }
+  var self = this;
+  options = options || {};
+
+  options.description = (options.description || null);
+  options.argumentDefault = (options.argumentDefault || null);
+  options.prefixChars = (options.prefixChars || '-');
+  options.conflictHandler = (options.conflictHandler || 'error');
+  ActionContainer.call(this, options);
+
+  options.addHelp = typeof options.addHelp === 'undefined' || !!options.addHelp;
+  options.parents = options.parents || [];
+  // default program name
+  options.prog = (options.prog || Path.basename(process.argv[1]));
+  this.prog = options.prog;
+  this.usage = options.usage;
+  this.epilog = options.epilog;
+  this.version = options.version;
+
+  this.debug = (options.debug === true);
+
+  this.formatterClass = (options.formatterClass || HelpFormatter);
+  this.fromfilePrefixChars = options.fromfilePrefixChars || null;
+  this._positionals = this.addArgumentGroup({ title: 'Positional arguments' });
+  this._optionals = this.addArgumentGroup({ title: 'Optional arguments' });
+  this._subparsers = null;
+
+  // register types
+  function FUNCTION_IDENTITY(o) {
+    return o;
+  }
+  this.register('type', 'auto', FUNCTION_IDENTITY);
+  this.register('type', null, FUNCTION_IDENTITY);
+  this.register('type', 'int', function (x) {
+    var result = parseInt(x, 10);
+    if (isNaN(result)) {
+      throw new Error(x + ' is not a valid integer.');
+    }
+    return result;
+  });
+  this.register('type', 'float', function (x) {
+    var result = parseFloat(x);
+    if (isNaN(result)) {
+      throw new Error(x + ' is not a valid float.');
+    }
+    return result;
+  });
+  this.register('type', 'string', function (x) {
+    return '' + x;
+  });
+
+  // add help and version arguments if necessary
+  var defaultPrefix = (this.prefixChars.indexOf('-') &gt; -1) ? '-' : this.prefixChars[0];
+  if (options.addHelp) {
+    this.addArgument(
+      [ defaultPrefix + 'h', defaultPrefix + defaultPrefix + 'help' ],
+      {
+        action: 'help',
+        defaultValue: c.SUPPRESS,
+        help: 'Show this help message and exit.'
+      }
+    );
+  }
+  if (typeof this.version !== 'undefined') {
+    this.addArgument(
+      [ defaultPrefix + 'v', defaultPrefix + defaultPrefix + 'version' ],
+      {
+        action: 'version',
+        version: this.version,
+        defaultValue: c.SUPPRESS,
+        help: "Show program's version number and exit."
+      }
+    );
+  }
+
+  // add parent arguments and defaults
+  options.parents.forEach(function (parent) {
+    self._addContainerActions(parent);
+    if (typeof parent._defaults !== 'undefined') {
+      for (var defaultKey in parent._defaults) {
+        if (parent._defaults.hasOwnProperty(defaultKey)) {
+          self._defaults[defaultKey] = parent._defaults[defaultKey];
+        }
+      }
+    }
+  });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.argparse.ArgumentParser.super_" id="apidoc.element.argparse.ArgumentParser.super_">
+        function <span class="apidocSignatureSpan">argparse.ArgumentParser.</span>super_
+        <span class="apidocSignatureSpan">(options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function ActionContainer(options) {
+  options = options || {};
+
+  this.description = options.description;
+  this.argumentDefault = options.argumentDefault;
+  this.prefixChars = options.prefixChars || '';
+  this.conflictHandler = options.conflictHandler;
+
+  // set up registries
+  this._registries = {};
+
+  // register actions
+  this.register('action', null, ActionStore);
+  this.register('action', 'store', ActionStore);
+  this.register('action', 'storeConst', ActionStoreConstant);
+  this.register('action', 'storeTrue', ActionStoreTrue);
+  this.register('action', 'storeFalse', ActionStoreFalse);
+  this.register('action', 'append', ActionAppend);
+  this.register('action', 'appendConst', ActionAppendConstant);
+  this.register('action', 'count', ActionCount);
+  this.register('action', 'help', ActionHelp);
+  this.register('action', 'version', ActionVersion);
+  this.register('action', 'parsers', ActionSubparsers);
+
+  // raise an exception if the conflict handler is invalid
+  this._getHandler();
+
+  // action storage
+  this._actions = [];
+  this._optionStringActions = {};
+
+  // groups
+  this._actionGroups = [];
+  this._mutuallyExclusiveGroups = [];
+
+  // defaults storage
+  this._defaults = {};
+
+  // determines whether an "option" looks like a negative number
+  // -1, -1.5 -5e+4
+  this._regexpNegativeNumber = new RegExp('^[-]?[0-9]*\\.?[0-9]+([eE][-+]?[0-9]+)?$');
+
+  // whether or not there are any optionals that look like negative
+  // numbers -- uses a list so it can be shared and edited
+  this._hasNegativeNumberOptionals = [];
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.argparse.ArgumentParser.prototype" id="apidoc.module.argparse.ArgumentParser.prototype">module argparse.ArgumentParser.prototype</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.argparse.ArgumentParser.prototype._addAction" id="apidoc.element.argparse.ArgumentParser.prototype._addAction">
+        function <span class="apidocSignatureSpan">argparse.ArgumentParser.prototype.</span>_addAction
+        <span class="apidocSignatureSpan">(action)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">_addAction = function (action) {
+  if (action.isOptional()) {
+    this._optionals._addAction(action);
+  } else {
+    this._positionals._addAction(action);
+  }
+  return action;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.argparse.ArgumentParser.prototype._checkValue" id="apidoc.element.argparse.ArgumentParser.prototype._checkValue">
+        function <span class="apidocSignatureSpan">argparse.ArgumentParser.prototype.</span>_checkValue
+        <span class="apidocSignatureSpan">(action, value)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">_checkValue = function (action, value) {
+  // converted value must be one of the choices (if specified)
+  var choices = action.choices;
+  if (choices) {
+    // choise for argument can by array or string
+    if ((typeof choices === 'string' || Array.isArray(choices)) &amp;&amp;
+        choices.indexOf(value) !== -1) {
+      return;
+    }
+    // choise for subparsers can by only hash
+    if (typeof choices === 'object' &amp;&amp; !Array.isArray(choices) &amp;&amp; choices[value]) {
+      return;
+    }
+
+    if (typeof choices === 'string') {
+      choices = choices.split('').join(', ');
+    } else if (Array.isArray(choices)) {
+      choices =  choices.join(', ');
+    } else {
+      choices =  Object.keys(choices).join(', ');
+    }
+    var message = format('Invalid choice: %s (choose from [%s])', value, choices);
+    throw argumentErrorHelper(action, message);
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.argparse.ArgumentParser.prototype._getFormatter" id="apidoc.element.argparse.ArgumentParser.prototype._getFormatter">
+        function <span class="apidocSignatureSpan">argparse.ArgumentParser.prototype.</span>_getFormatter
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">_getFormatter = function () {
+  var FormatterClass = this.formatterClass;
+  var formatter = new FormatterClass({ prog: this.prog });
+  return formatter;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.argparse.ArgumentParser.prototype._getNargsPattern" id="apidoc.element.argparse.ArgumentParser.prototype._getNargsPattern">
+        function <span class="apidocSignatureSpan">argparse.ArgumentParser.prototype.</span>_getNargsPattern
+        <span class="apidocSignatureSpan">(action)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">_getNargsPattern = function (action) {
+  // in all examples below, we have to allow for '--' args
+  // which are represented as '-' in the pattern
+  var regexpNargs;
+
+  switch (action.nargs) {
+    // the default (null) is assumed to be a single argument
+    case undefined:
+    case null:
+      regexpNargs = '(-*A-*)';
+      break;
+    // allow zero or more arguments
+    case c.OPTIONAL:
+      regexpNargs = '(-*A?-*)';
+      break;
+    // allow zero or more arguments
+    case c.ZERO_OR_MORE:
+      regexpNargs = '(-*[A-]*)';
+      break;
+    // allow one or more arguments
+    case c.ONE_OR_MORE:
+      regexpNargs = '(-*A[A-]*)';
+      break;
+    // allow any number of options or arguments
+    case c.REMAINDER:
+      regexpNargs = '([-AO]*)';
+      break;
+    // allow one argument followed by any number of options or arguments
+    case c.PARSER:
+      regexpNargs = '(-*A[-AO]*)';
+      break;
+    // all others should be integers
+    default:
+      regexpNargs = '(-*' + $$.repeat('-*A', action.nargs) + '-*)';
+  }
+
+  // if this is an optional action, -- is not allowed
+  if (action.isOptional()) {
+    regexpNargs = regexpNargs.replace(/-\*/g, '');
+    regexpNargs = regexpNargs.replace(/-/g, '');
+  }
+
+  // return the pattern
+  return regexpNargs;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.argparse.ArgumentParser.prototype._getOptionTuples" id="apidoc.element.argparse.ArgumentParser.prototype._getOptionTuples">
+        function <span class="apidocSignatureSpan">argparse.ArgumentParser.prototype.</span>_getOptionTuples
+        <span class="apidocSignatureSpan">(optionString)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">_getOptionTuples = function (optionString) {
+  var result = [];
+  var chars = this.prefixChars;
+  var optionPrefix;
+  var argExplicit;
+  var action;
+  var actionOptionString;
+
+  // option strings starting with two prefix characters are only split at
+  // the '='
+  if (chars.indexOf(optionString[0]) &gt;= 0 &amp;&amp; chars.indexOf(optionString[1]) &gt;= 0) {
+    if (optionString.indexOf('=') &gt;= 0) {
+      var optionStringSplit = optionString.split('=', 1);
+
+      optionPrefix = optionStringSplit[0];
+      argExplicit = optionStringSplit[1];
+    } else {
+      optionPrefix = optionString;
+      argExplicit = null;
+    }
+
+    for (actionOptionString in this._optionStringActions) {
+      if (actionOptionString.substr(0, optionPrefix.length) === optionPrefix) {
+        action = this._optionStringActions[actionOptionString];
+        result.push([ action, actionOptionString, argExplicit ]);
+      }
+    }
+
+  // single character options can be concatenated with their arguments
+  // but multiple character options always have to have their argument
+  // separate
+  } else if (chars.indexOf(optionString[0]) &gt;= 0 &amp;&amp; chars.indexOf(optionString[1]) &lt; 0) {
+    optionPrefix = optionString;
+    argExplicit = null;
+    var optionPrefixShort = optionString.substr(0, 2);
+    var argExplicitShort = optionString.substr(2);
+
+    for (actionOptionString in this._optionStringActions) {
+      if (!$$.has(this._optionStringActions, actionOptionString)) continue;
+
+      action = this._optionStringActions[actionOptionString];
+      if (actionOptionString === optionPrefixShort) {
+        result.push([ action, actionOptionString, argExplicitShort ]);
+      } else if (actionOptionString.substr(0, optionPrefix.length) === optionPrefix) {
+        result.push([ action, actionOptionString, argExplicit ]);
+      }
+    }
+
+  // shouldn't ever get here
+  } else {
+    throw new Error(format('Unexpected option string: %s.', optionString));
+  }
+  // return the collected option tuples
+  return result;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.argparse.ArgumentParser.prototype._getOptionalActions" id="apidoc.element.argparse.ArgumentParser.prototype._getOptionalActions">
+        function <span class="apidocSignatureSpan">argparse.ArgumentParser.prototype.</span>_getOptionalActions
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">_getOptionalActions = function () {
+  return this._actions.filter(function (action) {
+    return action.isOptional();
+  });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.argparse.ArgumentParser.prototype._getPositionalActions" id="apidoc.element.argparse.ArgumentParser.prototype._getPositionalActions">
+        function <span class="apidocSignatureSpan">argparse.ArgumentParser.prototype.</span>_getPositionalActions
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">_getPositionalActions = function () {
+  return this._actions.filter(function (action) {
+    return action.isPositional();
+  });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.argparse.ArgumentParser.prototype._getValue" id="apidoc.element.argparse.ArgumentParser.prototype._getValue">
+        function <span class="apidocSignatureSpan">argparse.ArgumentParser.prototype.</span>_getValue
+        <span class="apidocSignatureSpan">(action, argString)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">_getValue = function (action, argString) {
+  var result;
+
+  var typeFunction = this._registryGet('type', action.type, action.type);
+  if (typeof typeFunction !== 'function') {
+    var message = format('%s is not callable', typeFunction);
+    throw argumentErrorHelper(action, message);
+  }
+
+  // convert the value to the appropriate type
+  try {
+    result = typeFunction(argString);
+
+    // ArgumentTypeErrors indicate errors
+    // If action.type is not a registered string, it is a function
+    // Try to deduce its name for inclusion in the error message
+    // Failing that, include the error message it raised.
+  } catch (e) {
+    var name = null;
+    if (typeof action.type === 'string') {
+      name = action.type;
+    } else {
+      name = action.type.name || action.type.displayName || '&lt;function&gt;';
+    }
+    var msg = format('Invalid %s value: %s', name, argString);
+    if (name === '&lt;function&gt;') { msg += '\n' + e.message; }
+    throw argumentErrorHelper(action, msg);
+  }
+  // return the converted value
+  return result;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.argparse.ArgumentParser.prototype._getValues" id="apidoc.element.argparse.ArgumentParser.prototype._getValues">
+        function <span class="apidocSignatureSpan">argparse.ArgumentParser.prototype.</span>_getValues
+        <span class="apidocSignatureSpan">(action, argStrings)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">_getValues = function (action, argStrings) {
+  var self = this;
+
+  // for everything but PARSER args, strip out '--'
+  if (action.nargs !== c.PARSER &amp;&amp; action.nargs !== c.REMAINDER) {
+    argStrings = argStrings.filter(function (arrayElement) {
+      return arrayElement !== '--';
+    });
+  }
+
+  var value, argString;
+
+  // optional argument produces a default when not present
+  if (argStrings.length === 0 &amp;&amp; action.nargs === c.OPTIONAL) {
+
+    value = (action.isOptional()) ? action.constant : action.defaultValue;
+
+    if (typeof (value) === 'string') {
+      value = this._getValue(action, value);
+      this._checkValue(action, value);
+    }
+
+  // when nargs='*' on a positional, if there were no command-line
+  // args, use the default if it is anything other than None
+  } else if (argStrings.length === 0 &amp;&amp; action.nargs === c.ZERO_OR_MORE &amp;&amp;
+    action.optionStrings.length === 0) {
+
+    value = (action.defaultValue || argStrings);
+    this._checkValue(action, value);
+
+  // single argument or optional argument produces a single value
+  } else if (argStrings.length === 1 &amp;&amp;
+        (!action.nargs || action.nargs === c.OPTIONAL)) {
+
+    argString = argStrings[0];
+    value = this._getValue(action, argString);
+    this._checkValue(action, value);
+
+  // REMAINDER arguments convert all values, checking none
+  } else if (action.nargs === c.REMAINDER) {
+    value = argStrings.map(function (v) {
+      return self._getValue(action, v);
+    });
+
+  // PARSER arguments convert all values, but check only the first
+  } else if (action.nargs === c.PARSER) {
+    value = argStrings.map(function (v) {
+      return self._getValue(action, v);
+    });
+    this._checkValue(action, value[0]);
+
+  // all other types of nargs produce a list
+  } else {
+    value = argStrings.map(function (v) {
+      return self._getValue(action, v);
+    });
+    value.forEach(function (v) {
+      self._checkValue(action, v);
+    });
+  }
+
+  // return the converted value
+  return value;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.argparse.ArgumentParser.prototype._matchArgument" id="apidoc.element.argparse.ArgumentParser.prototype._matchArgument">
+        function <span class="apidocSignatureSpan">argparse.ArgumentParser.prototype.</span>_matchArgument
+        <span class="apidocSignatureSpan">(action, regexpArgStrings)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">_matchArgument = function (action, regexpArgStrings) {
+
+  // match the pattern for this action to the arg strings
+  var regexpNargs = new RegExp('^' + this._getNargsPattern(action));
+  var matches = regexpArgStrings.match(regexpNargs);
+  var message;
+
+  // throw an exception if we weren't able to find a match
+  if (!matches) {
+    switch (action.nargs) {
+<span class="apidocCodeCommentSpan">      /*eslint-disable no-undefined*/
+</span>      case undefined:
+      case null:
+        message = 'Expected one argument.';
+        break;
+      case c.OPTIONAL:
+        message = 'Expected at most one argument.';
+        break;
+      case c.ONE_OR_MORE:
+        message = 'Expected at least one argument.';
+        break;
+      default:
+        message = 'Expected %s argument(s)';
+    }
+
+    throw argumentErrorHelper(
+      action,
+      format(message, action.nargs)
+    );
+  }
+  // return the number of arguments matched
+  return matches[1].length;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.argparse.ArgumentParser.prototype._matchArgumentsPartial" id="apidoc.element.argparse.ArgumentParser.prototype._matchArgumentsPartial">
+        function <span class="apidocSignatureSpan">argparse.ArgumentParser.prototype.</span>_matchArgumentsPartial
+        <span class="apidocSignatureSpan">(actions, regexpArgStrings)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">_matchArgumentsPartial = function (actions, regexpArgStrings) {
+  // progressively shorten the actions list by slicing off the
+  // final actions until we find a match
+  var self = this;
+  var result = [];
+  var actionSlice, pattern, matches;
+  var i, j;
+
+  function getLength(string) {
+    return string.length;
+  }
+
+  for (i = actions.length; i &gt; 0; i--) {
+    pattern = '';
+    actionSlice = actions.slice(0, i);
+    for (j = 0; j &lt; actionSlice.length; j++) {
+      pattern += self._getNargsPattern(actionSlice[j]);
+    }
+
+    pattern = new RegExp('^' + pattern);
+    matches = regexpArgStrings.match(pattern);
+
+    if (matches &amp;&amp; matches.length &gt; 0) {
+      // need only groups
+      matches = matches.splice(1);
+      result = result.concat(matches.map(getLength));
+      break;
+    }
+  }
+
+  // return the list of arg string counts
+  return result;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.argparse.ArgumentParser.prototype._parseKnownArgs" id="apidoc.element.argparse.ArgumentParser.prototype._parseKnownArgs">
+        function <span class="apidocSignatureSpan">argparse.ArgumentParser.prototype.</span>_parseKnownArgs
+        <span class="apidocSignatureSpan">(argStrings, namespace)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">_parseKnownArgs = function (argStrings, namespace) {
+  var self = this;
+
+  var extras = [];
+
+  // replace arg strings that are file references
+  if (this.fromfilePrefixChars !== null) {
+    argStrings = this._readArgsFromFiles(argStrings);
+  }
+  // map all mutually exclusive arguments to the other arguments
+  // they can't occur with
+  // Python has 'conflicts = action_conflicts.setdefault(mutex_action, [])'
+  // though I can't conceive of a way in which an action could be a member
+  // of two different mutually exclusive groups.
+
+  function actionHash(action) {
+    // some sort of hashable key for this action
+    // action itself cannot be a key in actionConflicts
+    // I think getName() (join of optionStrings) is unique enough
+    return action.getName();
+  }
+
+  var conflicts, key;
+  var actionConflicts = {};
+
+  this._mutuallyExclusiveGroups.forEach(function (mutexGroup) {
+    mutexGroup._groupActions.forEach(function (mutexAction, i, groupActions) {
+      key = actionHash(mutexAction);
+      if (!$$.has(actionConflicts, key)) {
+        actionConflicts[key] = [];
+      }
+      conflicts = actionConflicts[key];
+      conflicts.push.apply(conflicts, groupActions.slice(0, i));
+      conflicts.push.apply(conflicts, groupActions.slice(i + 1));
+    });
+  });
+
+  // find all option indices, and determine the arg_string_pattern
+  // which has an 'O' if there is an option at an index,
+  // an 'A' if there is an argument, or a '-' if there is a '--'
+  var optionStringIndices = {};
+
+  var argStringPatternParts = [];
+
+  argStrings.forEach(function (argString, argStringIndex) {
+    if (argString === '--') {
+      argStringPatternParts.push('-');
+      while (argStringIndex &lt; argStrings.length) {
+        argStringPatternParts.push('A');
+        argStringIndex++;
+      }
+    } else {
+      // otherwise, add the arg to the arg strings
+      // and note the index if it was an option
+      var pattern;
+      var optionTuple = self._parseOptional(argString);
+      if (!optionTuple) {
+        pattern = 'A';
+      } else {
+        optionStringIndices[argStringIndex] = optionTuple;
+        pattern = 'O';
+      }
+      argStringPatternParts.push(pattern);
+    }
+  });
+  var argStringsPattern = argStringPatternParts.join('');
+
+  var seenActions = [];
+  var seenNonDefaultActions = [];
+
+
+  function takeAction(action, argumentStrings, optionString) {
+    seenActions.push(action);
+    var argumentValues = self._getValues(action, argumentStrings);
+
+    // error if this argument is not allowed with other previously
+    // seen arguments, assuming that actions that use the default
+    // value don't really count as "present"
+    if (argumentValues !== action.defaultValue) {
+      seenNonDefaultActions.push(action);
+      if (actionConflicts[actionHash(action)]) {
+        actionConflicts[actionHash(action)].forEach(function (actionConflict) {
+          if (seenNonDefaultActions.indexOf(actionConflict) &gt;= 0) {
+            throw argumentErrorHelper(
+              action,
+              format('Not allowed with argument "%s".', actionConflict.getName())
+            );
+          }
+        });
+      }
+    }
+
+    if (argumentValues !== c.SUPPRESS) {
+      action.call(self, namespace, argumentValues, optionString);
+    }
+  }
+
+  function consumeOptional(startIndex) {
+    // get the optional identified at this index
+    var optionTuple = optionStringIndices[startIndex];
+    var action = optionTuple[0];
+    var optionString = optionTuple[1];
+    var explicitArg = optionTuple[2];
+
+    // identify additional optionals in the same arg string
+    // (e.g. -xyz is the same as -x -y -z if no args are required)
+    var actionTuples = [];
+
+    var args, argCount, start, stop;
+
+    for (;;) {
+      if (!action) {
+        extras.push(argStrings[startIndex]);
+        return startIndex + 1;
+      }
+      if (explicitArg) {
+        argCount = self._matchArgument(action, 'A');
+
+        // if the action is a single-dash option and takes no
+        // arguments, try to parse more single-dash options out
+        // of the tail of the option string
+        var chars = self.prefixChars;
+        if ...</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.argparse.ArgumentParser.prototype._parseOptional" id="apidoc.element.argparse.ArgumentParser.prototype._parseOptional">
+        function <span class="apidocSignatureSpan">argparse.ArgumentParser.prototype.</span>_parseOptional
+        <span class="apidocSignatureSpan">(argString)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">_parseOptional = function (argString) {
+  var action, optionString, argExplicit, optionTuples;
+
+  // if it's an empty string, it was meant to be a positional
+  if (!argString) {
+    return null;
+  }
+
+  // if it doesn't start with a prefix, it was meant to be positional
+  if (this.prefixChars.indexOf(argString[0]) &lt; 0) {
+    return null;
+  }
+
+  // if the option string is present in the parser, return the action
+  if (this._optionStringActions[argString]) {
+    return [ this._optionStringActions[argString], argString, null ];
+  }
+
+  // if it's just a single character, it was meant to be positional
+  if (argString.length === 1) {
+    return null;
+  }
+
+  // if the option string before the "=" is present, return the action
+  if (argString.indexOf('=') &gt;= 0) {
+    optionString = argString.split('=', 1)[0];
+    argExplicit = argString.slice(optionString.length + 1);
+
+    if (this._optionStringActions[optionString]) {
+      action = this._optionStringActions[optionString];
+      return [ action, optionString, argExplicit ];
+    }
+  }
+
+  // search through all possible prefixes of the option string
+  // and all actions in the parser for possible interpretations
+  optionTuples = this._getOptionTuples(argString);
+
+  // if multiple actions match, the option string was ambiguous
+  if (optionTuples.length &gt; 1) {
+    var optionStrings = optionTuples.map(function (optionTuple) {
+      return optionTuple[1];
+    });
+    this.error(format(
+          'Ambiguous option: "%s" could match %s.',
+          argString, optionStrings.join(', ')
+    ));
+  // if exactly one action matched, this segmentation is good,
+  // so return the parsed action
+  } else if (optionTuples.length === 1) {
+    return optionTuples[0];
+  }
+
+  // if it was not found as an option, but it looks like a negative
+  // number, it was meant to be positional
+  // unless there are negative-number-like options
+  if (argString.match(this._regexpNegativeNumber)) {
+    if (!this._hasNegativeNumberOptionals.some(Boolean)) {
+      return null;
+    }
+  }
+  // if it contains a space, it was meant to be a positional
+  if (argString.search(' ') &gt;= 0) {
+    return null;
+  }
+
+  // it was meant to be an optional but there is no such option
+  // in this parser (though it might be a valid option in a subparser)
+  return [ null, argString, null ];
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.argparse.ArgumentParser.prototype._printMessage" id="apidoc.element.argparse.ArgumentParser.prototype._printMessage">
+        function <span class="apidocSignatureSpan">argparse.ArgumentParser.prototype.</span>_printMessage
+        <span class="apidocSignatureSpan">(message, stream)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">_printMessage = function (message, stream) {
+  if (!stream) {
+    stream = process.stdout;
+  }
+  if (message) {
+    stream.write('' + message);
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.argparse.ArgumentParser.prototype._readArgsFromFiles" id="apidoc.element.argparse.ArgumentParser.prototype._readArgsFromFiles">
+        function <span class="apidocSignatureSpan">argparse.ArgumentParser.prototype.</span>_readArgsFromFiles
+        <span class="apidocSignatureSpan">(argStrings)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">_readArgsFromFiles = function (argStrings) {
+  // expand arguments referencing files
+  var self = this;
+  var fs = require('fs');
+  var newArgStrings = [];
+  argStrings.forEach(function (argString) {
+    if (self.fromfilePrefixChars.indexOf(argString[0]) &lt; 0) {
+      // for regular arguments, just add them back into the list
+      newArgStrings.push(argString);
+    } else {
+      // replace arguments referencing files with the file content
+      try {
+        var argstrs = [];
+        var filename = argString.slice(1);
+        var content = fs.readFileSync(filename, 'utf8');
+        content = content.trim().split('\n');
+        content.forEach(function (argLine) {
+          self.convertArgLineToArgs(argLine).forEach(function (arg) {
+            argstrs.push(arg);
+          });
+          argstrs = self._readArgsFromFiles(argstrs);
+        });
+        newArgStrings.push.apply(newArgStrings, argstrs);
+      } catch (error) {
+        return self.error(error.message);
+      }
+    }
+  });
+  return newArgStrings;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.argparse.ArgumentParser.prototype.addSubparsers" id="apidoc.element.argparse.ArgumentParser.prototype.addSubparsers">
+        function <span class="apidocSignatureSpan">argparse.ArgumentParser.prototype.</span>addSubparsers
+        <span class="apidocSignatureSpan">(options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">addSubparsers = function (options) {
+  if (this._subparsers) {
+    this.error('Cannot have multiple subparser arguments.');
+  }
+
+  options = options || {};
+  options.debug = (this.debug === true);
+  options.optionStrings = [];
+  options.parserClass = (options.parserClass || ArgumentParser);
+
+
+  if (!!options.title || !!options.description) {
+
+    this._subparsers = this.addArgumentGroup({
+      title: (options.title || 'subcommands'),
+      description: options.description
+    });
+    delete options.title;
+    delete options.description;
+
+  } else {
+    this._subparsers = this._positionals;
+  }
+
+  // prog defaults to the usage message of this parser, skipping
+  // optional arguments and with no "usage:" prefix
+  if (!options.prog) {
+    var formatter = this._getFormatter();
+    var positionals = this._getPositionalActions();
+    var groups = this._mutuallyExclusiveGroups;
+    formatter.addUsage(this.usage, positionals, groups, '');
+    options.prog = formatter.formatHelp().trim();
+  }
+
+  // create the parsers action and add it to the positionals list
+  var ParsersClass = this._popActionClass(options, 'parsers');
+  var action = new ParsersClass(options);
+  this._subparsers._addAction(action);
+
+  // return the created parsers action
+  return action;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+Details in [original action guide](http://docs.python.org/dev/library/argparse.html#action)
+
+
+Sub-commands
+============
+
+ArgumentParser.<span class="apidocCodeKeywordSpan">addSubparsers</span>()
+
+Many programs split their functionality into a number of sub-commands, for
+example, the svn program can invoke sub-commands like `svn checkout`, `svn update`,
+and `svn commit`. Splitting up functionality this way can be a particularly good
+idea when a program performs several different functions which require different
+kinds of command-line arguments. `ArgumentParser` supports creation of such
+sub-commands with `addSubparsers()` method. The `addSubparsers()` method is
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.argparse.ArgumentParser.prototype.convertArgLineToArgs" id="apidoc.element.argparse.ArgumentParser.prototype.convertArgLineToArgs">
+        function <span class="apidocSignatureSpan">argparse.ArgumentParser.prototype.</span>convertArgLineToArgs
+        <span class="apidocSignatureSpan">(argLine)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">convertArgLineToArgs = function (argLine) {
+  return [ argLine ];
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.argparse.ArgumentParser.prototype.error" id="apidoc.element.argparse.ArgumentParser.prototype.error">
+        function <span class="apidocSignatureSpan">argparse.ArgumentParser.prototype.</span>error
+        <span class="apidocSignatureSpan">(err)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">error = function (err) {
+  var message;
+  if (err instanceof Error) {
+    if (this.debug === true) {
+      throw err;
+    }
+    message = err.message;
+  } else {
+    message = err;
+  }
+  var msg = format('%s: error: %s', this.prog, message) + c.EOL;
+
+  if (this.debug === true) {
+    throw new Error(msg);
+  }
+
+  this.printUsage(process.stderr);
+
+  return this.exit(2, msg);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.argparse.ArgumentParser.prototype.exit" id="apidoc.element.argparse.ArgumentParser.prototype.exit">
+        function <span class="apidocSignatureSpan">argparse.ArgumentParser.prototype.</span>exit
+        <span class="apidocSignatureSpan">(status, message)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">exit = function (status, message) {
+  if (message) {
+    if (status === 0) {
+      this._printMessage(message);
+    } else {
+      this._printMessage(message, process.stderr);
+    }
+  }
+
+  process.exit(status);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.argparse.ArgumentParser.prototype.formatHelp" id="apidoc.element.argparse.ArgumentParser.prototype.formatHelp">
+        function <span class="apidocSignatureSpan">argparse.ArgumentParser.prototype.</span>formatHelp
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">formatHelp = function () {
+  var formatter = this._getFormatter();
+
+  // usage
+  formatter.addUsage(this.usage, this._actions, this._mutuallyExclusiveGroups);
+
+  // description
+  formatter.addText(this.description);
+
+  // positionals, optionals and user-defined groups
+  this._actionGroups.forEach(function (actionGroup) {
+    formatter.startSection(actionGroup.title);
+    formatter.addText(actionGroup.description);
+    formatter.addArguments(actionGroup._groupActions);
+    formatter.endSection();
+  });
+
+  // epilog
+  formatter.addText(this.epilog);
+
+  // determine help from format above
+  return formatter.formatHelp();
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.argparse.ArgumentParser.prototype.formatUsage" id="apidoc.element.argparse.ArgumentParser.prototype.formatUsage">
+        function <span class="apidocSignatureSpan">argparse.ArgumentParser.prototype.</span>formatUsage
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">formatUsage = function () {
+  var formatter = this._getFormatter();
+  formatter.addUsage(this.usage, this._actions, this._mutuallyExclusiveGroups);
+  return formatter.formatHelp();
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.argparse.ArgumentParser.prototype.parseArgs" id="apidoc.element.argparse.ArgumentParser.prototype.parseArgs">
+        function <span class="apidocSignatureSpan">argparse.ArgumentParser.prototype.</span>parseArgs
+        <span class="apidocSignatureSpan">(args, namespace)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">parseArgs = function (args, namespace) {
+  var argv;
+  var result = this.parseKnownArgs(args, namespace);
+
+  args = result[0];
+  argv = result[1];
+  if (argv &amp;&amp; argv.length &gt; 0) {
+    this.error(
+      format('Unrecognized arguments: %s.', argv.join(' '))
+    );
+  }
+  return args;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+);
+parser.addArgument(
+  '--baz',
+  {
+    help: 'baz bar'
+  }
+);
+var args = parser.<span class="apidocCodeKeywordSpan">parseArgs</span>();
+console.dir(args);
+```
+
+Display help:
+
+```
+$ ./test.js -h
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.argparse.ArgumentParser.prototype.parseKnownArgs" id="apidoc.element.argparse.ArgumentParser.prototype.parseKnownArgs">
+        function <span class="apidocSignatureSpan">argparse.ArgumentParser.prototype.</span>parseKnownArgs
+        <span class="apidocSignatureSpan">(args, namespace)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">parseKnownArgs = function (args, namespace) {
+  var self = this;
+
+  // args default to the system args
+  args = args || process.argv.slice(2);
+
+  // default Namespace built from parser defaults
+  namespace = namespace || new Namespace();
+
+  self._actions.forEach(function (action) {
+    if (action.dest !== c.SUPPRESS) {
+      if (!$$.has(namespace, action.dest)) {
+        if (action.defaultValue !== c.SUPPRESS) {
+          var defaultValue = action.defaultValue;
+          if (typeof action.defaultValue === 'string') {
+            defaultValue = self._getValue(action, defaultValue);
+          }
+          namespace[action.dest] = defaultValue;
+        }
+      }
+    }
+  });
+
+  Object.keys(self._defaults).forEach(function (dest) {
+    namespace[dest] = self._defaults[dest];
+  });
+
+  // parse the arguments and exit if there are any errors
+  try {
+    var res = this._parseKnownArgs(args, namespace);
+
+    namespace = res[0];
+    args = res[1];
+    if ($$.has(namespace, c._UNRECOGNIZED_ARGS_ATTR)) {
+      args = $$.arrayUnion(args, namespace[c._UNRECOGNIZED_ARGS_ATTR]);
+      delete namespace[c._UNRECOGNIZED_ARGS_ATTR];
+    }
+    return [ namespace, args ];
+  } catch (e) {
+    this.error(e);
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.argparse.ArgumentParser.prototype.printHelp" id="apidoc.element.argparse.ArgumentParser.prototype.printHelp">
+        function <span class="apidocSignatureSpan">argparse.ArgumentParser.prototype.</span>printHelp
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">printHelp = function () {
+  this._printMessage(this.formatHelp());
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.argparse.ArgumentParser.prototype.printUsage" id="apidoc.element.argparse.ArgumentParser.prototype.printUsage">
+        function <span class="apidocSignatureSpan">argparse.ArgumentParser.prototype.</span>printUsage
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">printUsage = function () {
+  this._printMessage(this.formatUsage());
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.argparse.ArgumentParser.super_" id="apidoc.module.argparse.ArgumentParser.super_">module argparse.ArgumentParser.super_</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.argparse.ArgumentParser.super_.super_" id="apidoc.element.argparse.ArgumentParser.super_.super_">
+        function <span class="apidocSignatureSpan">argparse.ArgumentParser.</span>super_
+        <span class="apidocSignatureSpan">(options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function ActionContainer(options) {
+  options = options || {};
+
+  this.description = options.description;
+  this.argumentDefault = options.argumentDefault;
+  this.prefixChars = options.prefixChars || '';
+  this.conflictHandler = options.conflictHandler;
+
+  // set up registries
+  this._registries = {};
+
+  // register actions
+  this.register('action', null, ActionStore);
+  this.register('action', 'store', ActionStore);
+  this.register('action', 'storeConst', ActionStoreConstant);
+  this.register('action', 'storeTrue', ActionStoreTrue);
+  this.register('action', 'storeFalse', ActionStoreFalse);
+  this.register('action', 'append', ActionAppend);
+  this.register('action', 'appendConst', ActionAppendConstant);
+  this.register('action', 'count', ActionCount);
+  this.register('action', 'help', ActionHelp);
+  this.register('action', 'version', ActionVersion);
+  this.register('action', 'parsers', ActionSubparsers);
+
+  // raise an exception if the conflict handler is invalid
+  this._getHandler();
+
+  // action storage
+  this._actions = [];
+  this._optionStringActions = {};
+
+  // groups
+  this._actionGroups = [];
+  this._mutuallyExclusiveGroups = [];
+
+  // defaults storage
+  this._defaults = {};
+
+  // determines whether an "option" looks like a negative number
+  // -1, -1.5 -5e+4
+  this._regexpNegativeNumber = new RegExp('^[-]?[0-9]*\\.?[0-9]+([eE][-+]?[0-9]+)?$');
+
+  // whether or not there are any optionals that look like negative
+  // numbers -- uses a list so it can be shared and edited
+  this._hasNegativeNumberOptionals = [];
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.argparse.ArgumentParser.super_.prototype" id="apidoc.module.argparse.ArgumentParser.super_.prototype">module argparse.ArgumentParser.super_.prototype</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.argparse.ArgumentParser.super_.prototype._addAction" id="apidoc.element.argparse.ArgumentParser.super_.prototype._addAction">
+        function <span class="apidocSignatureSpan">argparse.ArgumentParser.super_.prototype.</span>_addAction
+        <span class="apidocSignatureSpan">(action)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">_addAction = function (action) {
+  var self = this;
+
+  // resolve any conflicts
+  this._checkConflict(action);
+
+  // add to actions list
+  this._actions.push(action);
+  action.container = this;
+
+  // index the action by any option strings it has
+  action.optionStrings.forEach(function (optionString) {
+    self._optionStringActions[optionString] = action;
+  });
+
+  // set the flag if any option strings look like negative numbers
+  action.optionStrings.forEach(function (optionString) {
+    if (optionString.match(self._regexpNegativeNumber)) {
+      if (!self._hasNegativeNumberOptionals.some(Boolean)) {
+        self._hasNegativeNumberOptionals.push(true);
+      }
+    }
+  });
+
+  // return the created action
+  return action;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.argparse.ArgumentParser.super_.prototype._addContainerActions" id="apidoc.element.argparse.ArgumentParser.super_.prototype._addContainerActions">
+        function <span class="apidocSignatureSpan">argparse.ArgumentParser.super_.prototype.</span>_addContainerActions
+        <span class="apidocSignatureSpan">(container)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">_addContainerActions = function (container) {
+  // collect groups by titles
+  var titleGroupMap = {};
+  this._actionGroups.forEach(function (group) {
+    if (titleGroupMap[group.title]) {
+      throw new Error(format('Cannot merge actions - two groups are named "%s".', group.title));
+    }
+    titleGroupMap[group.title] = group;
+  });
+
+  // map each action to its group
+  var groupMap = {};
+  function actionHash(action) {
+    // unique (hopefully?) string suitable as dictionary key
+    return action.getName();
+  }
+  container._actionGroups.forEach(function (group) {
+    // if a group with the title exists, use that, otherwise
+    // create a new group matching the container's group
+    if (!titleGroupMap[group.title]) {
+      titleGroupMap[group.title] = this.addArgumentGroup({
+        title: group.title,
+        description: group.description
+      });
+    }
+
+    // map the actions to their new group
+    group._groupActions.forEach(function (action) {
+      groupMap[actionHash(action)] = titleGroupMap[group.title];
+    });
+  }, this);
+
+  // add container's mutually exclusive groups
+  // NOTE: if add_mutually_exclusive_group ever gains title= and
+  // description= then this code will need to be expanded as above
+  var mutexGroup;
+  container._mutuallyExclusiveGroups.forEach(function (group) {
+    mutexGroup = this.addMutuallyExclusiveGroup({
+      required: group.required
+    });
+    // map the actions to their new mutex group
+    group._groupActions.forEach(function (action) {
+      groupMap[actionHash(action)] = mutexGroup;
+    });
+  }, this);  // forEach takes a 'this' argument
+
+  // add all actions to this container or their group
+  container._actions.forEach(function (action) {
+    var key = actionHash(action);
+    if (groupMap[key]) {
+      groupMap[key]._addAction(action);
+    } else {
+      this._addAction(action);
+    }
+  });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.argparse.ArgumentParser.super_.prototype._checkConflict" id="apidoc.element.argparse.ArgumentParser.super_.prototype._checkConflict">
+        function <span class="apidocSignatureSpan">argparse.ArgumentParser.super_.prototype.</span>_checkConflict
+        <span class="apidocSignatureSpan">(action)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">_checkConflict = function (action) {
+  var optionStringActions = this._optionStringActions;
+  var conflictOptionals = [];
+
+  // find all options that conflict with this option
+  // collect pairs, the string, and an existing action that it conflicts with
+  action.optionStrings.forEach(function (optionString) {
+    var conflOptional = optionStringActions[optionString];
+    if (typeof conflOptional !== 'undefined') {
+      conflictOptionals.push([ optionString, conflOptional ]);
+    }
+  });
+
+  if (conflictOptionals.length &gt; 0) {
+    var conflictHandler = this._getHandler();
+    conflictHandler.call(this, action, conflictOptionals);
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.argparse.ArgumentParser.super_.prototype._getHandler" id="apidoc.element.argparse.ArgumentParser.super_.prototype._getHandler">
+        function <span class="apidocSignatureSpan">argparse.ArgumentParser.super_.prototype.</span>_getHandler
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">_getHandler = function () {
+  var handlerString = this.conflictHandler;
+  var handlerFuncName = '_handleConflict' + $$.capitalize(handlerString);
+  var func = this[handlerFuncName];
+  if (typeof func === 'undefined') {
+    var msg = 'invalid conflict resolution value: ' + handlerString;
+    throw new Error(msg);
+  } else {
+    return func;
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.argparse.ArgumentParser.super_.prototype._getOptional" id="apidoc.element.argparse.ArgumentParser.super_.prototype._getOptional">
+        function <span class="apidocSignatureSpan">argparse.ArgumentParser.super_.prototype.</span>_getOptional
+        <span class="apidocSignatureSpan">(args, options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">_getOptional = function (args, options) {
+  var prefixChars = this.prefixChars;
+  var optionStrings = [];
+  var optionStringsLong = [];
+
+  // determine short and long option strings
+  args.forEach(function (optionString) {
+    // error on strings that don't start with an appropriate prefix
+    if (prefixChars.indexOf(optionString[0]) &lt; 0) {
+      throw new Error(format('Invalid option string "%s": must start with a "%s".',
+        optionString,
+        prefixChars
+      ));
+    }
+
+    // strings starting with two prefix characters are long options
+    optionStrings.push(optionString);
+    if (optionString.length &gt; 1 &amp;&amp; prefixChars.indexOf(optionString[1]) &gt;= 0) {
+      optionStringsLong.push(optionString);
+    }
+  });
+
+  // infer dest, '--foo-bar' -&gt; 'foo_bar' and '-x' -&gt; 'x'
+  var dest = options.dest || null;
+  delete options.dest;
+
+  if (!dest) {
+    var optionStringDest = optionStringsLong.length ? optionStringsLong[0] : optionStrings[0];
+    dest = $$.trimChars(optionStringDest, this.prefixChars);
+
+    if (dest.length === 0) {
+      throw new Error(
+        format('dest= is required for options like "%s"', optionStrings.join(', '))
+      );
+    }
+    dest = dest.replace(/-/g, '_');
+  }
+
+  // return the updated keyword arguments
+  options.dest = dest;
+  options.optionStrings = optionStrings;
+
+  return options;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.argparse.ArgumentParser.super_.prototype._getPositional" id="apidoc.element.argparse.ArgumentParser.super_.prototype._getPositional">
+        function <span class="apidocSignatureSpan">argparse.ArgumentParser.super_.prototype.</span>_getPositional
+        <span class="apidocSignatureSpan">(dest, options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">_getPositional = function (dest, options) {
+  if (Array.isArray(dest)) {
+    dest = dest[0];
+  }
+  // make sure required is not specified
+  if (options.required) {
+    throw new Error('"required" is an invalid argument for positionals.');
+  }
+
+  // mark positional arguments as required if at least one is
+  // always required
+  if (options.nargs !== c.OPTIONAL &amp;&amp; options.nargs !== c.ZERO_OR_MORE) {
+    options.required = true;
+  }
+  if (options.nargs === c.ZERO_OR_MORE &amp;&amp; typeof options.defaultValue === 'undefined') {
+    options.required = true;
+  }
+
+  // return the keyword arguments with no option strings
+  options.dest = dest;
+  options.optionStrings = [];
+  return options;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.argparse.ArgumentParser.super_.prototype._handleConflictError" id="apidoc.element.argparse.ArgumentParser.super_.prototype._handleConflictError">
+        function <span class="apidocSignatureSpan">argparse.ArgumentParser.super_.prototype.</span>_handleConflictError
+        <span class="apidocSignatureSpan">(action, conflOptionals)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">_handleConflictError = function (action, conflOptionals) {
+  var conflicts = conflOptionals.map(function (pair) { return pair[0]; });
+  conflicts = conflicts.join(', ');
+  throw argumentErrorHelper(
+    action,
+    format('Conflicting option string(s): %s', conflicts)
+  );
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.argparse.ArgumentParser.super_.prototype._handleConflictResolve" id="apidoc.element.argparse.ArgumentParser.super_.prototype._handleConflictResolve">
+        function <span class="apidocSignatureSpan">argparse.ArgumentParser.super_.prototype.</span>_handleConflictResolve
+        <span class="apidocSignatureSpan">(action, conflOptionals)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">_handleConflictResolve = function (action, conflOptionals) {
+  // remove all conflicting options
+  var self = this;
+  conflOptionals.forEach(function (pair) {
+    var optionString = pair[0];
+    var conflictingAction = pair[1];
+    // remove the conflicting option string
+    var i = conflictingAction.optionStrings.indexOf(optionString);
+    if (i &gt;= 0) {
+      conflictingAction.optionStrings.splice(i, 1);
+    }
+    delete self._optionStringActions[optionString];
+    // if the option now has no option string, remove it from the
+    // container holding it
+    if (conflictingAction.optionStrings.length === 0) {
+      conflictingAction.container._removeAction(conflictingAction);
+    }
+  });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.argparse.ArgumentParser.super_.prototype._popActionClass" id="apidoc.element.argparse.ArgumentParser.super_.prototype._popActionClass">
+        function <span class="apidocSignatureSpan">argparse.ArgumentParser.super_.prototype.</span>_popActionClass
+        <span class="apidocSignatureSpan">(options, defaultValue)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">_popActionClass = function (options, defaultValue) {
+  defaultValue = defaultValue || null;
+
+  var action = (options.action || defaultValue);
+  delete options.action;
+
+  var actionClass = this._registryGet('action', action, action);
+  return actionClass;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.argparse.ArgumentParser.super_.prototype._registryGet" id="apidoc.element.argparse.ArgumentParser.super_.prototype._registryGet">
+        function <span class="apidocSignatureSpan">argparse.ArgumentParser.super_.prototype.</span>_registryGet
+        <span class="apidocSignatureSpan">(registryName, value, defaultValue)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">_registryGet = function (registryName, value, defaultValue) {
+  if (arguments.length &lt; 3) {
+    defaultValue = null;
+  }
+  return this._registries[registryName][value] || defaultValue;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.argparse.ArgumentParser.super_.prototype._removeAction" id="apidoc.element.argparse.ArgumentParser.super_.prototype._removeAction">
+        function <span class="apidocSignatureSpan">argparse.ArgumentParser.super_.prototype.</span>_removeAction
+        <span class="apidocSignatureSpan">(action)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">_removeAction = function (action) {
+  var actionIndex = this._actions.indexOf(action);
+  if (actionIndex &gt;= 0) {
+    this._actions.splice(actionIndex, 1);
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.argparse.ArgumentParser.super_.prototype.addArgument" id="apidoc.element.argparse.ArgumentParser.super_.prototype.addArgument">
+        function <span class="apidocSignatureSpan">argparse.ArgumentParser.super_.prototype.</span>addArgument
+        <span class="apidocSignatureSpan">(args, options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">addArgument = function (args, options) {
+  args = args;
+  options = options || {};
+
+  if (typeof args === 'string') {
+    args = [ args ];
+  }
+  if (!Array.isArray(args)) {
+    throw new TypeError('addArgument first argument should be a string or an array');
+  }
+  if (typeof options !== 'object' || Array.isArray(options)) {
+    throw new TypeError('addArgument second argument should be a hash');
+  }
+
+  // if no positional args are supplied or only one is supplied and
+  // it doesn't look like an option string, parse a positional argument
+  if (!args || args.length === 1 &amp;&amp; this.prefixChars.indexOf(args[0][0]) &lt; 0) {
+    if (args &amp;&amp; !!options.dest) {
+      throw new Error('dest supplied twice for positional argument');
+    }
+    options = this._getPositional(args, options);
+
+    // otherwise, we're adding an optional argument
+  } else {
+    options = this._getOptional(args, options);
+  }
+
+  // if no default was supplied, use the parser-level default
+  if (typeof options.defaultValue === 'undefined') {
+    var dest = options.dest;
+    if ($$.has(this._defaults, dest)) {
+      options.defaultValue = this._defaults[dest];
+    } else if (typeof this.argumentDefault !== 'undefined') {
+      options.defaultValue = this.argumentDefault;
+    }
+  }
+
+  // create the action object, and add it to the parser
+  var ActionClass = this._popActionClass(options);
+  if (typeof ActionClass !== 'function') {
+    throw new Error(format('Unknown action "%s".', ActionClass));
+  }
+  var action = new ActionClass(options);
+
+  // throw an error if the action type is not callable
+  var typeFunction = this._registryGet('type', action.type, action.type);
+  if (typeof typeFunction !== 'function') {
+    throw new Error(format('"%s" is not callable', typeFunction));
+  }
+
+  return this._addAction(action);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+var ArgumentParser = require('../lib/argparse').ArgumentParser;
+var parser = new ArgumentParser({
+version: '0.0.1',
+addHelp:true,
+description: 'Argparse example'
+});
+parser.<span class="apidocCodeKeywordSpan">addArgument</span>(
+[ '-f', '--foo' ],
+{
+  help: 'foo bar'
+}
+);
+parser.addArgument(
+[ '-b', '--bar' ],
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.argparse.ArgumentParser.super_.prototype.addArgumentGroup" id="apidoc.element.argparse.ArgumentParser.super_.prototype.addArgumentGroup">
+        function <span class="apidocSignatureSpan">argparse.ArgumentParser.super_.prototype.</span>addArgumentGroup
+        <span class="apidocSignatureSpan">(options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">addArgumentGroup = function (options) {
+  var group = new ArgumentGroup(this, options);
+  this._actionGroups.push(group);
+  return group;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.argparse.ArgumentParser.super_.prototype.addMutuallyExclusiveGroup" id="apidoc.element.argparse.ArgumentParser.super_.prototype.addMutuallyExclusiveGroup">
+        function <span class="apidocSignatureSpan">argparse.ArgumentParser.super_.prototype.</span>addMutuallyExclusiveGroup
+        <span class="apidocSignatureSpan">(options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">addMutuallyExclusiveGroup = function (options) {
+  var group = new MutuallyExclusiveGroup(this, options);
+  this._mutuallyExclusiveGroups.push(group);
+  return group;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.argparse.ArgumentParser.super_.prototype.getDefault" id="apidoc.element.argparse.ArgumentParser.super_.prototype.getDefault">
+        function <span class="apidocSignatureSpan">argparse.ArgumentParser.super_.prototype.</span>getDefault
+        <span class="apidocSignatureSpan">(dest)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">getDefault = function (dest) {
+  var result = $$.has(this._defaults, dest) ? this._defaults[dest] : null;
+
+  this._actions.forEach(function (action) {
+    if (action.dest === dest &amp;&amp; $$.has(action, 'defaultValue')) {
+      result = action.defaultValue;
+    }
+  });
+
+  return result;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.argparse.ArgumentParser.super_.prototype.register" id="apidoc.element.argparse.ArgumentParser.super_.prototype.register">
+        function <span class="apidocSignatureSpan">argparse.ArgumentParser.super_.prototype.</span>register
+        <span class="apidocSignatureSpan">(registryName, value, object)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">register = function (registryName, value, object) {
+  this._registries[registryName] = this._registries[registryName] || {};
+  this._registries[registryName][value] = object;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.argparse.ArgumentParser.super_.prototype.setDefaults" id="apidoc.element.argparse.ArgumentParser.super_.prototype.setDefaults">
+        function <span class="apidocSignatureSpan">argparse.ArgumentParser.super_.prototype.</span>setDefaults
+        <span class="apidocSignatureSpan">(options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">setDefaults = function (options) {
+  options = options || {};
+  for (var property in options) {
+    if ($$.has(options, property)) {
+      this._defaults[property] = options[property];
+    }
+  }
+
+  // if these defaults match any existing arguments, replace the previous
+  // default on the object with the new one
+  this._actions.forEach(function (action) {
+    if ($$.has(options, action.dest)) {
+      action.defaultValue = options[action.dest];
+    }
+  });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.argparse.HelpFormatter" id="apidoc.module.argparse.HelpFormatter">module argparse.HelpFormatter</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.argparse.HelpFormatter.HelpFormatter" id="apidoc.element.argparse.HelpFormatter.HelpFormatter">
+        function <span class="apidocSignatureSpan">argparse.</span>HelpFormatter
+        <span class="apidocSignatureSpan">(options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function HelpFormatter(options) {
+  options = options || {};
+
+  this._prog = options.prog;
+
+  this._maxHelpPosition = options.maxHelpPosition || 24;
+  this._width = (options.width || ((process.env.COLUMNS || 80) - 2));
+
+  this._currentIndent = 0;
+  this._indentIncriment = options.indentIncriment || 2;
+  this._level = 0;
+  this._actionMaxLength = 0;
+
+  this._rootSection = new Section(null);
+  this._currentSection = this._rootSection;
+
+  this._whitespaceMatcher = new RegExp('\\s+', 'g');
+  this._longBreakMatcher = new RegExp(c.EOL + c.EOL + c.EOL + '+', 'g');
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.argparse.HelpFormatter.prototype" id="apidoc.module.argparse.HelpFormatter.prototype">module argparse.HelpFormatter.prototype</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.argparse.HelpFormatter.prototype._addItem" id="apidoc.element.argparse.HelpFormatter.prototype._addItem">
+        function <span class="apidocSignatureSpan">argparse.HelpFormatter.prototype.</span>_addItem
+        <span class="apidocSignatureSpan">(func, args)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">_addItem = function (func, args) {
+  this._currentSection.addItem([ func, args ]);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.argparse.HelpFormatter.prototype._dedent" id="apidoc.element.argparse.HelpFormatter.prototype._dedent">
+        function <span class="apidocSignatureSpan">argparse.HelpFormatter.prototype.</span>_dedent
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">_dedent = function () {
+  this._currentIndent -= this._indentIncriment;
+  this._level -= 1;
+  if (this._currentIndent &lt; 0) {
+    throw new Error('Indent decreased below 0.');
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.argparse.HelpFormatter.prototype._expandHelp" id="apidoc.element.argparse.HelpFormatter.prototype._expandHelp">
+        function <span class="apidocSignatureSpan">argparse.HelpFormatter.prototype.</span>_expandHelp
+        <span class="apidocSignatureSpan">(action)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">_expandHelp = function (action) {
+  var params = { prog: this._prog };
+
+  Object.keys(action).forEach(function (actionProperty) {
+    var actionValue = action[actionProperty];
+
+    if (actionValue !== c.SUPPRESS) {
+      params[actionProperty] = actionValue;
+    }
+  });
+
+  if (params.choices) {
+    if (typeof params.choices === 'string') {
+      params.choices = params.choices.split('').join(', ');
+    } else if (Array.isArray(params.choices)) {
+      params.choices = params.choices.join(', ');
+    } else {
+      params.choices = Object.keys(params.choices).join(', ');
+    }
+  }
+
+  return sprintf(this._getHelpString(action), params);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.argparse.HelpFormatter.prototype._fillText" id="apidoc.element.argparse.HelpFormatter.prototype._fillText">
+        function <span class="apidocSignatureSpan">argparse.HelpFormatter.prototype.</span>_fillText
+        <span class="apidocSignatureSpan">(text, width, indent)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">_fillText = function (text, width, indent) {
+  var lines = this._splitLines(text, width);
+  lines = lines.map(function (line) {
+    return indent + line;
+  });
+  return lines.join(c.EOL);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.argparse.HelpFormatter.prototype._formatAction" id="apidoc.element.argparse.HelpFormatter.prototype._formatAction">
+        function <span class="apidocSignatureSpan">argparse.HelpFormatter.prototype.</span>_formatAction
+        <span class="apidocSignatureSpan">(action)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">_formatAction = function (action) {
+  var self = this;
+
+  var helpText;
+  var helpLines;
+  var parts;
+  var indentFirst;
+
+  // determine the required width and the entry label
+  var helpPosition = Math.min(this._actionMaxLength + 2, this._maxHelpPosition);
+  var helpWidth = this._width - helpPosition;
+  var actionWidth = helpPosition - this._currentIndent - 2;
+  var actionHeader = this._formatActionInvocation(action);
+
+  // no help; start on same line and add a final newline
+  if (!action.help) {
+    actionHeader = $$.repeat(' ', this._currentIndent) + actionHeader + c.EOL;
+
+  // short action name; start on the same line and pad two spaces
+  } else if (actionHeader.length &lt;= actionWidth) {
+    actionHeader = $$.repeat(' ', this._currentIndent) +
+        actionHeader +
+        '  ' +
+        $$.repeat(' ', actionWidth - actionHeader.length);
+    indentFirst = 0;
+
+  // long action name; start on the next line
+  } else {
+    actionHeader = $$.repeat(' ', this._currentIndent) + actionHeader + c.EOL;
+    indentFirst = helpPosition;
+  }
+
+  // collect the pieces of the action help
+  parts = [ actionHeader ];
+
+  // if there was help for the action, add lines of help text
+  if (action.help) {
+    helpText = this._expandHelp(action);
+    helpLines = this._splitLines(helpText, helpWidth);
+    parts.push($$.repeat(' ', indentFirst) + helpLines[0] + c.EOL);
+    helpLines.slice(1).forEach(function (line) {
+      parts.push($$.repeat(' ', helpPosition) + line + c.EOL);
+    });
+
+  // or add a newline if the description doesn't end with one
+  } else if (actionHeader.charAt(actionHeader.length - 1) !== c.EOL) {
+    parts.push(c.EOL);
+  }
+  // if there are any sub-actions, add their help as well
+  if (action._getSubactions) {
+    this._indent();
+    action._getSubactions().forEach(function (subaction) {
+      parts.push(self._formatAction(subaction));
+    });
+    this._dedent();
+  }
+  // return a single string
+  return this._joinParts(parts);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.argparse.HelpFormatter.prototype._formatActionInvocation" id="apidoc.element.argparse.HelpFormatter.prototype._formatActionInvocation">
+        function <span class="apidocSignatureSpan">argparse.HelpFormatter.prototype.</span>_formatActionInvocation
+        <span class="apidocSignatureSpan">(action)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">_formatActionInvocation = function (action) {
+  if (!action.isOptional()) {
+    var format_func = this._metavarFormatter(action, action.dest);
+    var metavars = format_func(1);
+    return metavars[0];
+  }
+
+  var parts = [];
+  var argsDefault;
+  var argsString;
+
+  // if the Optional doesn't take a value, format is: -s, --long
+  if (action.nargs === 0) {
+    parts = parts.concat(action.optionStrings);
+
+  // if the Optional takes a value, format is: -s ARGS, --long ARGS
+  } else {
+    argsDefault = action.dest.toUpperCase();
+    argsString = this._formatArgs(action, argsDefault);
+    action.optionStrings.forEach(function (optionString) {
+      parts.push(optionString + ' ' + argsString);
+    });
+  }
+  return parts.join(', ');
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.argparse.HelpFormatter.prototype._formatActionsUsage" id="apidoc.element.argparse.HelpFormatter.prototype._formatActionsUsage">
+        function <span class="apidocSignatureSpan">argparse.HelpFormatter.prototype.</span>_formatActionsUsage
+        <span class="apidocSignatureSpan">(actions, groups)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">_formatActionsUsage = function (actions, groups) {
+  // find group indices and identify actions in groups
+  var groupActions = [];
+  var inserts = [];
+  var self = this;
+
+  groups.forEach(function (group) {
+    var end;
+    var i;
+
+    var start = actions.indexOf(group._groupActions[0]);
+    if (start &gt;= 0) {
+      end = start + group._groupActions.length;
+
+      //if (actions.slice(start, end) === group._groupActions) {
+      if ($$.arrayEqual(actions.slice(start, end), group._groupActions)) {
+        group._groupActions.forEach(function (action) {
+          groupActions.push(action);
+        });
+
+        if (!group.required) {
+          if (inserts[start]) {
+            inserts[start] += ' [';
+          } else {
+            inserts[start] = '[';
+          }
+          inserts[end] = ']';
+        } else {
+          if (inserts[start]) {
+            inserts[start] += ' (';
+          } else {
+            inserts[start] = '(';
+          }
+          inserts[end] = ')';
+        }
+        for (i = start + 1; i &lt; end; i += 1) {
+          inserts[i] = '|';
+        }
+      }
+    }
+  });
+
+  // collect all actions format strings
+  var parts = [];
+
+  actions.forEach(function (action, actionIndex) {
+    var part;
+    var optionString;
+    var argsDefault;
+    var argsString;
+
+    // suppressed arguments are marked with None
+    // remove | separators for suppressed arguments
+    if (action.help === c.SUPPRESS) {
+      parts.push(null);
+      if (inserts[actionIndex] === '|') {
+        inserts.splice(actionIndex, actionIndex);
+      } else if (inserts[actionIndex + 1] === '|') {
+        inserts.splice(actionIndex + 1, actionIndex + 1);
+      }
+
+      // produce all arg strings
+    } else if (!action.isOptional()) {
+      part = self._formatArgs(action, action.dest);
+
+      // if it's in a group, strip the outer []
+      if (groupActions.indexOf(action) &gt;= 0) {
+        if (part[0] === '[' &amp;&amp; part[part.length - 1] === ']') {
+          part = part.slice(1, -1);
+        }
+      }
+      // add the action string to the list
+      parts.push(part);
+
+    // produce the first way to invoke the option in brackets
+    } else {
+      optionString = action.optionStrings[0];
+
+      // if the Optional doesn't take a value, format is: -s or --long
+      if (action.nargs === 0) {
+        part = '' + optionString;
+
+      // if the Optional takes a value, format is: -s ARGS or --long ARGS
+      } else {
+        argsDefault = action.dest.toUpperCase();
+        argsString = self._formatArgs(action, argsDefault);
+        part = optionString + ' ' + argsString;
+      }
+      // make it look optional if it's not required or in a group
+      if (!action.required &amp;&amp; groupActions.indexOf(action) &lt; 0) {
+        part = '[' + part + ']';
+      }
+      // add the action string to the list
+      parts.push(part);
+    }
+  });
+
+  // insert things at the necessary indices
+  for (var i = inserts.length - 1; i &gt;= 0; --i) {
+    if (inserts[i] !== null) {
+      parts.splice(i, 0, inserts[i]);
+    }
+  }
+
+  // join all the action items with spaces
+  var text = parts.filter(function (part) {
+    return !!part;
+  }).join(' ');
+
+  // clean up separators for mutually exclusive groups
+  text = text.replace(/([\[(]) /g, '$1'); // remove spaces
+  text = text.replace(/ ([\])])/g, '$1');
+  text = text.replace(/\[ *\]/g, ''); // remove empty groups
+  text = text.replace(/\( *\)/g, '');
+  text = text.replace(/\(([^|]*)\)/g, '$1'); // remove () from single action groups
+
+  text = text.trim();
+
+  // return the text
+  return text;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.argparse.HelpFormatter.prototype._formatArgs" id="apidoc.element.argparse.HelpFormatter.prototype._formatArgs">
+        function <span class="apidocSignatureSpan">argparse.HelpFormatter.prototype.</span>_formatArgs
+        <span class="apidocSignatureSpan">(action, metavarDefault)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">_formatArgs = function (action, metavarDefault) {
+  var result;
+  var metavars;
+
+  var buildMetavar = this._metavarFormatter(action, metavarDefault);
+
+  switch (action.nargs) {
+<span class="apidocCodeCommentSpan">    /*eslint-disable no-undefined*/
+</span>    case undefined:
+    case null:
+      metavars = buildMetavar(1);
+      result = '' + metavars[0];
+      break;
+    case c.OPTIONAL:
+      metavars = buildMetavar(1);
+      result = '[' + metavars[0] + ']';
+      break;
+    case c.ZERO_OR_MORE:
+      metavars = buildMetavar(2);
+      result = '[' + metavars[0] + ' [' + metavars[1] + ' ...]]';
+      break;
+    case c.ONE_OR_MORE:
+      metavars = buildMetavar(2);
+      result = '' + metavars[0] + ' [' + metavars[1] + ' ...]';
+      break;
+    case c.REMAINDER:
+      result = '...';
+      break;
+    case c.PARSER:
+      metavars = buildMetavar(1);
+      result = metavars[0] + ' ...';
+      break;
+    default:
+      metavars = buildMetavar(action.nargs);
+      result = metavars.join(' ');
+  }
+  return result;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.argparse.HelpFormatter.prototype._formatText" id="apidoc.element.argparse.HelpFormatter.prototype._formatText">
+        function <span class="apidocSignatureSpan">argparse.HelpFormatter.prototype.</span>_formatText
+        <span class="apidocSignatureSpan">(text)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">_formatText = function (text) {
+  text = sprintf(text, { prog: this._prog });
+  var textWidth = this._width - this._currentIndent;
+  var indentIncriment = $$.repeat(' ', this._currentIndent);
+  return this._fillText(text, textWidth, indentIncriment) + c.EOL + c.EOL;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.argparse.HelpFormatter.prototype._formatUsage" id="apidoc.element.argparse.HelpFormatter.prototype._formatUsage">
+        function <span class="apidocSignatureSpan">argparse.HelpFormatter.prototype.</span>_formatUsage
+        <span class="apidocSignatureSpan">(usage, actions, groups, prefix)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">_formatUsage = function (usage, actions, groups, prefix) {
+  if (!prefix &amp;&amp; typeof prefix !== 'string') {
+    prefix = 'usage: ';
+  }
+
+  actions = actions || [];
+  groups = groups || [];
+
+
+  // if usage is specified, use that
+  if (usage) {
+    usage = sprintf(usage, { prog: this._prog });
+
+    // if no optionals or positionals are available, usage is just prog
+  } else if (!usage &amp;&amp; actions.length === 0) {
+    usage = this._prog;
+
+    // if optionals and positionals are available, calculate usage
+  } else if (!usage) {
+    var prog = this._prog;
+    var optionals = [];
+    var positionals = [];
+    var actionUsage;
+    var textWidth;
+
+    // split optionals from positionals
+    actions.forEach(function (action) {
+      if (action.isOptional()) {
+        optionals.push(action);
+      } else {
+        positionals.push(action);
+      }
+    });
+
+    // build full usage string
+    actionUsage = this._formatActionsUsage([].concat(optionals, positionals), groups);
+    usage = [ prog, actionUsage ].join(' ');
+
+    // wrap the usage parts if it's too long
+    textWidth = this._width - this._currentIndent;
+    if ((prefix.length + usage.length) &gt; textWidth) {
+
+      // break usage into wrappable parts
+      var regexpPart = new RegExp('\\(.*?\\)+|\\[.*?\\]+|\\S+', 'g');
+      var optionalUsage = this._formatActionsUsage(optionals, groups);
+      var positionalUsage = this._formatActionsUsage(positionals, groups);
+
+
+      var optionalParts = optionalUsage.match(regexpPart);
+      var positionalParts = positionalUsage.match(regexpPart) || [];
+
+      if (optionalParts.join(' ') !== optionalUsage) {
+        throw new Error('assert "optionalParts.join(\' \') === optionalUsage"');
+      }
+      if (positionalParts.join(' ') !== positionalUsage) {
+        throw new Error('assert "positionalParts.join(\' \') === positionalUsage"');
+      }
+
+      // helper for wrapping lines
+      /*eslint-disable func-style*/ // node 0.10 compat
+      var _getLines = function (parts, indent, prefix) {
+        var lines = [];
+        var line = [];
+
+        var lineLength = prefix ? prefix.length - 1 : indent.length - 1;
+
+        parts.forEach(function (part) {
+          if (lineLength + 1 + part.length &gt; textWidth) {
+            lines.push(indent + line.join(' '));
+            line = [];
+            lineLength = indent.length - 1;
+          }
+          line.push(part);
+          lineLength += part.length + 1;
+        });
+
+        if (line) {
+          lines.push(indent + line.join(' '));
+        }
+        if (prefix) {
+          lines[0] = lines[0].substr(indent.length);
+        }
+        return lines;
+      };
+
+      var lines, indent, parts;
+      // if prog is short, follow it with optionals or positionals
+      if (prefix.length + prog.length &lt;= 0.75 * textWidth) {
+        indent = $$.repeat(' ', (prefix.length + prog.length + 1));
+        if (optionalParts) {
+          lines = [].concat(
+            _getLines([ prog ].concat(optionalParts), indent, prefix),
+            _getLines(positionalParts, indent)
+          );
+        } else if (positionalParts) {
+          lines = _getLines([ prog ].concat(positionalParts), indent, prefix);
+        } else {
+          lines = [ prog ];
+        }
+
+        // if prog is long, put it on its own line
+      } else {
+        indent = $$.repeat(' ', prefix.length);
+        parts = optionalParts + positionalParts;
+        lines = _getLines(parts, indent);
+        if (lines.length &gt; 1) {
+          lines = [].concat(
+            _getLines(optionalParts, indent),
+            _getLines(positionalParts, indent)
+          );
+        }
+        lines = [ prog ] + lines;
+      }
+      // join lines into usage
+      usage = lines.join(c.EOL);
+    }
+  }
+
+  // prefix with 'usage:'
+  return prefix + usage + c.EOL + c.EOL;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.argparse.HelpFormatter.prototype._getHelpString" id="apidoc.element.argparse.HelpFormatter.prototype._getHelpString">
+        function <span class="apidocSignatureSpan">argparse.HelpFormatter.prototype.</span>_getHelpString
+        <span class="apidocSignatureSpan">(action)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">_getHelpString = function (action) {
+  return action.help;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.argparse.HelpFormatter.prototype._indent" id="apidoc.element.argparse.HelpFormatter.prototype._indent">
+        function <span class="apidocSignatureSpan">argparse.HelpFormatter.prototype.</span>_indent
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">_indent = function () {
+  this._currentIndent += this._indentIncriment;
+  this._level += 1;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.argparse.HelpFormatter.prototype._joinParts" id="apidoc.element.argparse.HelpFormatter.prototype._joinParts">
+        function <span class="apidocSignatureSpan">argparse.HelpFormatter.prototype.</span>_joinParts
+        <span class="apidocSignatureSpan">(partStrings)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">_joinParts = function (partStrings) {
+  return partStrings.filter(function (part) {
+    return (part &amp;&amp; part !== c.SUPPRESS);
+  }).join('');
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.argparse.HelpFormatter.prototype._metavarFormatter" id="apidoc.element.argparse.HelpFormatter.prototype._metavarFormatter">
+        function <span class="apidocSignatureSpan">argparse.HelpFormatter.prototype.</span>_metavarFormatter
+        <span class="apidocSignatureSpan">(action, metavarDefault)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">_metavarFormatter = function (action, metavarDefault) {
+  var result;
+
+  if (action.metavar || action.metavar === '') {
+    result = action.metavar;
+  } else if (action.choices) {
+    var choices = action.choices;
+
+    if (typeof choices === 'string') {
+      choices = choices.split('').join(', ');
+    } else if (Array.isArray(choices)) {
+      choices = choices.join(',');
+    } else {
+      choices = Object.keys(choices).join(',');
+    }
+    result = '{' + choices + '}';
+  } else {
+    result = metavarDefault;
+  }
+
+  return function (size) {
+    if (Array.isArray(result)) {
+      return result;
+    }
+
+    var metavars = [];
+    for (var i = 0; i &lt; size; i += 1) {
+      metavars.push(result);
+    }
+    return metavars;
+  };
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.argparse.HelpFormatter.prototype._splitLines" id="apidoc.element.argparse.HelpFormatter.prototype._splitLines">
+        function <span class="apidocSignatureSpan">argparse.HelpFormatter.prototype.</span>_splitLines
+        <span class="apidocSignatureSpan">(text, width)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">_splitLines = function (text, width) {
+  var lines = [];
+  var delimiters = [ ' ', '.', ',', '!', '?' ];
+  var re = new RegExp('[' + delimiters.join('') + '][^' + delimiters.join('') + ']*$');
+
+  text = text.replace(/[\n\|\t]/g, ' ');
+
+  text = text.trim();
+  text = text.replace(this._whitespaceMatcher, ' ');
+
+  // Wraps the single paragraph in text (a string) so every line
+  // is at most width characters long.
+  text.split(c.EOL).forEach(function (line) {
+    if (width &gt;= line.length) {
+      lines.push(line);
+      return;
+    }
+
+    var wrapStart = 0;
+    var wrapEnd = width;
+    var delimiterIndex = 0;
+    while (wrapEnd &lt;= line.length) {
+      if (wrapEnd !== line.length &amp;&amp; delimiters.indexOf(line[wrapEnd] &lt; -1)) {
+        delimiterIndex = (re.exec(line.substring(wrapStart, wrapEnd)) || {}).index;
+        wrapEnd = wrapStart + delimiterIndex + 1;
+      }
+      lines.push(line.substring(wrapStart, wrapEnd));
+      wrapStart = wrapEnd;
+      wrapEnd += width;
+    }
+    if (wrapStart &lt; line.length) {
+      lines.push(line.substring(wrapStart, wrapEnd));
+    }
+  });
+
+  return lines;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.argparse.HelpFormatter.prototype.addArgument" id="apidoc.element.argparse.HelpFormatter.prototype.addArgument">
+        function <span class="apidocSignatureSpan">argparse.HelpFormatter.prototype.</span>addArgument
+        <span class="apidocSignatureSpan">(action)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">addArgument = function (action) {
+  if (action.help !== c.SUPPRESS) {
+    var self = this;
+
+    // find all invocations
+    var invocations = [ this._formatActionInvocation(action) ];
+    var invocationLength = invocations[0].length;
+
+    var actionLength;
+
+    if (action._getSubactions) {
+      this._indent();
+      action._getSubactions().forEach(function (subaction) {
+
+        var invocationNew = self._formatActionInvocation(subaction);
+        invocations.push(invocationNew);
+        invocationLength = Math.max(invocationLength, invocationNew.length);
+
+      });
+      this._dedent();
+    }
+
+    // update the maximum item length
+    actionLength = invocationLength + this._currentIndent;
+    this._actionMaxLength = Math.max(this._actionMaxLength, actionLength);
+
+    // add the item to the list
+    this._addItem(this._formatAction, [ action ]);
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+var ArgumentParser = require('../lib/argparse').ArgumentParser;
+var parser = new ArgumentParser({
+version: '0.0.1',
+addHelp:true,
+description: 'Argparse example'
+});
+parser.<span class="apidocCodeKeywordSpan">addArgument</span>(
+[ '-f', '--foo' ],
+{
+  help: 'foo bar'
+}
+);
+parser.addArgument(
+[ '-b', '--bar' ],
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.argparse.HelpFormatter.prototype.addArguments" id="apidoc.element.argparse.HelpFormatter.prototype.addArguments">
+        function <span class="apidocSignatureSpan">argparse.HelpFormatter.prototype.</span>addArguments
+        <span class="apidocSignatureSpan">(actions)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">addArguments = function (actions) {
+  var self = this;
+  actions.forEach(function (action) {
+    self.addArgument(action);
+  });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.argparse.HelpFormatter.prototype.addText" id="apidoc.element.argparse.HelpFormatter.prototype.addText">
+        function <span class="apidocSignatureSpan">argparse.HelpFormatter.prototype.</span>addText
+        <span class="apidocSignatureSpan">(text)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">addText = function (text) {
+  if (text &amp;&amp; text !== c.SUPPRESS) {
+    this._addItem(this._formatText, [ text ]);
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.argparse.HelpFormatter.prototype.addUsage" id="apidoc.element.argparse.HelpFormatter.prototype.addUsage">
+        function <span class="apidocSignatureSpan">argparse.HelpFormatter.prototype.</span>addUsage
+        <span class="apidocSignatureSpan">(usage, actions, groups, prefix)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">addUsage = function (usage, actions, groups, prefix) {
+  if (usage !== c.SUPPRESS) {
+    this._addItem(this._formatUsage, [ usage, actions, groups, prefix ]);
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.argparse.HelpFormatter.prototype.endSection" id="apidoc.element.argparse.HelpFormatter.prototype.endSection">
+        function <span class="apidocSignatureSpan">argparse.HelpFormatter.prototype.</span>endSection
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">endSection = function () {
+  this._currentSection = this._currentSection._parent;
+  this._dedent();
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.argparse.HelpFormatter.prototype.formatHelp" id="apidoc.element.argparse.HelpFormatter.prototype.formatHelp">
+        function <span class="apidocSignatureSpan">argparse.HelpFormatter.prototype.</span>formatHelp
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">formatHelp = function () {
+  var help = this._rootSection.formatHelp(this);
+  if (help) {
+    help = help.replace(this._longBreakMatcher, c.EOL + c.EOL);
+    help = $$.trimChars(help, c.EOL) + c.EOL;
+  }
+  return help;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.argparse.HelpFormatter.prototype.startSection" id="apidoc.element.argparse.HelpFormatter.prototype.startSection">
+        function <span class="apidocSignatureSpan">argparse.HelpFormatter.prototype.</span>startSection
+        <span class="apidocSignatureSpan">(heading)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">startSection = function (heading) {
+  this._indent();
+  var section = new Section(this._currentSection, heading);
+  var func = section.formatHelp.bind(section);
+  this._addItem(func, [ this ]);
+  this._currentSection = section;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.argparse.Namespace" id="apidoc.module.argparse.Namespace">module argparse.Namespace</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.argparse.Namespace.Namespace" id="apidoc.element.argparse.Namespace.Namespace">
+        function <span class="apidocSignatureSpan">argparse.</span>Namespace
+        <span class="apidocSignatureSpan">(options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function Namespace(options) {
+  $$.extend(this, options);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.argparse.Namespace.prototype" id="apidoc.module.argparse.Namespace.prototype">module argparse.Namespace.prototype</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.argparse.Namespace.prototype.get" id="apidoc.element.argparse.Namespace.prototype.get">
+        function <span class="apidocSignatureSpan">argparse.Namespace.prototype.</span>get
+        <span class="apidocSignatureSpan">(key, defaultValue)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">get = function (key, defaultValue) {
+  return !this[key] ? defaultValue : this[key];
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.argparse.Namespace.prototype.isset" id="apidoc.element.argparse.Namespace.prototype.isset">
+        function <span class="apidocSignatureSpan">argparse.Namespace.prototype.</span>isset
+        <span class="apidocSignatureSpan">(key)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">isset = function (key) {
+  return $$.has(this, key);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.argparse.Namespace.prototype.set" id="apidoc.element.argparse.Namespace.prototype.set">
+        function <span class="apidocSignatureSpan">argparse.Namespace.prototype.</span>set
+        <span class="apidocSignatureSpan">(key, value)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">set = function (key, value) {
+  if (typeof (key) === 'object') {
+    $$.extend(this, key);
+  } else {
+    this[key] = value;
+  }
+  return this;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.argparse.Namespace.prototype.unset" id="apidoc.element.argparse.Namespace.prototype.unset">
+        function <span class="apidocSignatureSpan">argparse.Namespace.prototype.</span>unset
+        <span class="apidocSignatureSpan">(key, defaultValue)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">unset = function (key, defaultValue) {
+  var value = this[key];
+  if (value !== null) {
+    delete this[key];
+    return value;
+  }
+  return defaultValue;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.argparse.RawDescriptionHelpFormatter" id="apidoc.module.argparse.RawDescriptionHelpFormatter">module argparse.RawDescriptionHelpFormatter</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.argparse.RawDescriptionHelpFormatter.RawDescriptionHelpFormatter" id="apidoc.element.argparse.RawDescriptionHelpFormatter.RawDescriptionHelpFormatter">
+        function <span class="apidocSignatureSpan">argparse.</span>RawDescriptionHelpFormatter
+        <span class="apidocSignatureSpan">(options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function RawDescriptionHelpFormatter(options) {
+  HelpFormatter.call(this, options);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.argparse.RawDescriptionHelpFormatter.super_" id="apidoc.element.argparse.RawDescriptionHelpFormatter.super_">
+        function <span class="apidocSignatureSpan">argparse.RawDescriptionHelpFormatter.</span>super_
+        <span class="apidocSignatureSpan">(options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function HelpFormatter(options) {
+  options = options || {};
+
+  this._prog = options.prog;
+
+  this._maxHelpPosition = options.maxHelpPosition || 24;
+  this._width = (options.width || ((process.env.COLUMNS || 80) - 2));
+
+  this._currentIndent = 0;
+  this._indentIncriment = options.indentIncriment || 2;
+  this._level = 0;
+  this._actionMaxLength = 0;
+
+  this._rootSection = new Section(null);
+  this._currentSection = this._rootSection;
+
+  this._whitespaceMatcher = new RegExp('\\s+', 'g');
+  this._longBreakMatcher = new RegExp(c.EOL + c.EOL + c.EOL + '+', 'g');
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.argparse.RawDescriptionHelpFormatter.prototype" id="apidoc.module.argparse.RawDescriptionHelpFormatter.prototype">module argparse.RawDescriptionHelpFormatter.prototype</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.argparse.RawDescriptionHelpFormatter.prototype._fillText" id="apidoc.element.argparse.RawDescriptionHelpFormatter.prototype._fillText">
+        function <span class="apidocSignatureSpan">argparse.RawDescriptionHelpFormatter.prototype.</span>_fillText
+        <span class="apidocSignatureSpan">(text, width, indent)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">_fillText = function (text, width, indent) {
+  var lines = text.split('\n');
+  lines = lines.map(function (line) {
+    return $$.trimEnd(indent + line);
+  });
+  return lines.join('\n');
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.argparse.RawTextHelpFormatter" id="apidoc.module.argparse.RawTextHelpFormatter">module argparse.RawTextHelpFormatter</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.argparse.RawTextHelpFormatter.RawTextHelpFormatter" id="apidoc.element.argparse.RawTextHelpFormatter.RawTextHelpFormatter">
+        function <span class="apidocSignatureSpan">argparse.</span>RawTextHelpFormatter
+        <span class="apidocSignatureSpan">(options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function RawTextHelpFormatter(options) {
+  RawDescriptionHelpFormatter.call(this, options);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.argparse.RawTextHelpFormatter.super_" id="apidoc.element.argparse.RawTextHelpFormatter.super_">
+        function <span class="apidocSignatureSpan">argparse.RawTextHelpFormatter.</span>super_
+        <span class="apidocSignatureSpan">(options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function RawDescriptionHelpFormatter(options) {
+  HelpFormatter.call(this, options);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.argparse.RawTextHelpFormatter.prototype" id="apidoc.module.argparse.RawTextHelpFormatter.prototype">module argparse.RawTextHelpFormatter.prototype</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.argparse.RawTextHelpFormatter.prototype._splitLines" id="apidoc.element.argparse.RawTextHelpFormatter.prototype._splitLines">
+        function <span class="apidocSignatureSpan">argparse.RawTextHelpFormatter.prototype.</span>_splitLines
+        <span class="apidocSignatureSpan">(text)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">_splitLines = function (text) {
+  return text.split('\n');
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.argparse.utils" id="apidoc.module.argparse.utils">module argparse.utils</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.argparse.utils.arrayEqual" id="apidoc.element.argparse.utils.arrayEqual">
+        function <span class="apidocSignatureSpan">argparse.utils.</span>arrayEqual
+        <span class="apidocSignatureSpan">(a, b)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">arrayEqual = function (a, b) {
+  if (a.length !== b.length) { return false; }
+  for (var i = 0; i &lt; a.length; i++) {
+    if (a[i] !== b[i]) { return false; }
+  }
+  return true;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.argparse.utils.arrayUnion" id="apidoc.element.argparse.utils.arrayUnion">
+        function <span class="apidocSignatureSpan">argparse.utils.</span>arrayUnion
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">arrayUnion = function () {
+  var result = [];
+  for (var i = 0, values = {}; i &lt; arguments.length; i++) {
+    var arr = arguments[i];
+    for (var j = 0; j &lt; arr.length; j++) {
+      if (!values[arr[j]]) {
+        values[arr[j]] = true;
+        result.push(arr[j]);
+      }
+    }
+  }
+  return result;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.argparse.utils.capitalize" id="apidoc.element.argparse.utils.capitalize">
+        function <span class="apidocSignatureSpan">argparse.utils.</span>capitalize
+        <span class="apidocSignatureSpan">(str)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">capitalize = function (str) {
+  return str.charAt(0).toUpperCase() + str.slice(1);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.argparse.utils.extend" id="apidoc.element.argparse.utils.extend">
+        function <span class="apidocSignatureSpan">argparse.utils.</span>extend
+        <span class="apidocSignatureSpan">(dest, src)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">extend = function (dest, src) {
+  for (var i in src) {
+    if (has(src, i)) { dest[i] = src[i]; }
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.argparse.utils.has" id="apidoc.element.argparse.utils.has">
+        function <span class="apidocSignatureSpan">argparse.utils.</span>has
+        <span class="apidocSignatureSpan">(obj, key)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function has(obj, key) {
+  return Object.prototype.hasOwnProperty.call(obj, key);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.argparse.utils.repeat" id="apidoc.element.argparse.utils.repeat">
+        function <span class="apidocSignatureSpan">argparse.utils.</span>repeat
+        <span class="apidocSignatureSpan">(str, num)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">repeat = function (str, num) {
+  var result = '';
+  for (var i = 0; i &lt; num; i++) { result += str; }
+  return result;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.argparse.utils.trimChars" id="apidoc.element.argparse.utils.trimChars">
+        function <span class="apidocSignatureSpan">argparse.utils.</span>trimChars
+        <span class="apidocSignatureSpan">(str, chars)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">trimChars = function (str, chars) {
+  var start = 0;
+  var end = str.length - 1;
+  while (chars.indexOf(str.charAt(start)) &gt;= 0) { start++; }
+  while (chars.indexOf(str.charAt(end)) &gt;= 0) { end--; }
+  return str.slice(start, end + 1);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.argparse.utils.trimEnd" id="apidoc.element.argparse.utils.trimEnd">
+        function <span class="apidocSignatureSpan">argparse.utils.</span>trimEnd
+        <span class="apidocSignatureSpan">(str)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">trimEnd = function (str) {
+  return str.replace(/\s+$/g, '');
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocFooterDiv">
+    [ this document was created with
+    <a href="https://github.com/kaizhu256/node-utility2" target="_blank">utility2</a>
+    ]
+</div>
+</div>
+</body></html>
