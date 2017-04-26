@@ -1,6 +1,6 @@
 # npmdoc-argparse
 
-#### api documentation for  [argparse (v1.0.9)](https://github.com/nodeca/argparse#readme)  [![npm package](https://img.shields.io/npm/v/npmdoc-argparse.svg?style=flat-square)](https://www.npmjs.org/package/npmdoc-argparse) [![travis-ci.org build-status](https://api.travis-ci.org/npmdoc/node-npmdoc-argparse.svg)](https://travis-ci.org/npmdoc/node-npmdoc-argparse)
+#### basic api documentation for  [argparse (v1.0.9)](https://github.com/nodeca/argparse#readme)  [![npm package](https://img.shields.io/npm/v/npmdoc-argparse.svg?style=flat-square)](https://www.npmjs.org/package/npmdoc-argparse) [![travis-ci.org build-status](https://api.travis-ci.org/npmdoc/node-npmdoc-argparse.svg)](https://travis-ci.org/npmdoc/node-npmdoc-argparse)
 
 #### Very powerful CLI arguments parser. Native port of argparse - python's options parsing library
 
@@ -75,7 +75,8 @@
     "scripts": {
         "test": "make test"
     },
-    "version": "1.0.9"
+    "version": "1.0.9",
+    "bin": {}
 }
 ```
 
